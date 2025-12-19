@@ -1,5 +1,4 @@
-
-  (function ($) {
+(function ($) {
   
   "use strict";
 
@@ -41,13 +40,13 @@
           $(elem).removeClass('active');
         }
         var MainTimelineContainer = $('#vertical-scrollable-timeline')[0];
-        var MainTimelineContainerBottom = MainTimelineContainer.getBoundingClientRect().bottom - $(window).height()*.5;
-        $(MainTimelineContainer).find('.inner').css('height',MainTimelineContainerBottom+'px');
+        if (MainTimelineContainer) {
+          var MainTimelineContainerBottom = MainTimelineContainer.getBoundingClientRect().bottom - $(window).height()*.5;
+          $(MainTimelineContainer).find('.inner').css('height',MainTimelineContainerBottom+'px');
+        }
       }
       var timeline = $('#vertical-scrollable-timeline li');
       Array.from(timeline).forEach(isScrollIntoView);
     });
   
-  })(window.jQuery);
-
-
+})(window.jQuery);
