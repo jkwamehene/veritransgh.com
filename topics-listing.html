@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Find EV charging stations across Ghana and Africa - VeriTransGH verified locations">
+    <meta name="description" content="Find verified EV charging stations across Ghana - VeriTransGH">
     <meta name="author" content="VeriTransGH">
-    <title>EV Charging Stations | VeriTransGH</title>
+    <title>Charging Stations | VeriTransGH</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,97 +16,139 @@
     <link href="css/verified.css" rel="stylesheet">
 
     <style>
-        /* Page-specific styles */
-        .station-map-container {
-            position: relative;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .station-map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .map-overlay {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            max-width: 300px;
-            z-index: 10;
-        }
-        
+        /* Charging Stations Page Styles */
         .station-card {
             background: white;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: var(--shadow-sm);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             height: 100%;
-            border-left: 4px solid var(--primary-color);
         }
         
         .station-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
         }
         
-        .station-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
+        .station-card-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
         }
         
-        .station-icon i {
-            font-size: 28px;
-            color: white;
+        .station-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .station-card:hover .station-card-img img {
+            transform: scale(1.1);
         }
         
         .station-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
         }
         
-        .status-available {
-            background: rgba(25, 135, 84, 0.1);
-            color: var(--primary-color);
+        .status-available { background: #198754; color: white; }
+        .status-busy { background: #f59e0b; color: white; }
+        .status-offline { background: #dc3545; color: white; }
+        
+        .station-card-body { padding: 24px; }
+        
+        .station-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #0d1b2a;
         }
         
-        .status-busy {
-            background: rgba(255, 193, 7, 0.1);
-            color: #ffc107;
+        .station-address {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
         }
         
-        .status-offline {
-            background: rgba(220, 53, 69, 0.1);
-            color: #dc3545;
+        .station-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
         }
         
-        .charger-type {
-            display: inline-block;
-            padding: 4px 10px;
-            background: #f8f9fa;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            margin-right: 6px;
-            margin-bottom: 6px;
+        .station-detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .station-detail i { color: #198754; }
+        
+        .station-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+        }
+        
+        .btn-directions {
+            flex: 1;
+            padding: 12px;
+            background: #198754;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-directions:hover { background: #146c43; color: white; }
+        
+        .btn-details {
+            padding: 12px 20px;
+            background: transparent;
+            color: #198754;
+            border: 2px solid #198754;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .btn-details:hover { background: #198754; color: white; }
+        
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            background: #e9ecef;
+            position: relative;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .search-filter-box {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
         }
         
         .filter-btn {
@@ -115,112 +157,44 @@
             background: white;
             border-radius: 25px;
             font-weight: 500;
-            transition: all 0.3s ease;
             cursor: pointer;
+            color: #6c757d;
         }
         
         .filter-btn:hover,
         .filter-btn.active {
-            border-color: var(--primary-color);
-            background: var(--primary-color);
+            border-color: #198754;
+            background: #198754;
             color: white;
         }
-        
-        .stats-row {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #1a2d42 100%);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 60px;
-        }
-        
-        .stat-item {
+
+        .stats-card {
+            background: linear-gradient(135deg, #198754, #146c43);
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
             text-align: center;
-            color: white;
         }
         
-        .stat-number {
+        .stats-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary-color);
+            margin-bottom: 8px;
         }
         
-        .stat-label {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-        
-        .search-box {
-            position: relative;
-        }
-        
-        .search-box input {
-            padding: 16px 20px 16px 50px;
-            border-radius: 30px;
-            border: 2px solid #e9ecef;
-            width: 100%;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .search-box input:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.1);
-        }
-        
-        .search-box i {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6c757d;
-        }
-
-        .how-it-works-mini {
-            background: #f8f9fa;
-            border-radius: 16px;
-            padding: 30px;
-        }
-
-        .step-mini {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .step-mini:last-child {
-            margin-bottom: 0;
-        }
-
-        .step-number-mini {
-            width: 36px;
-            height: 36px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
+        .stats-label { opacity: 0.9; }
     </style>
 </head>
 
 <body id="top">
     <main>
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <i class="bi-ev-station"></i>
+                    <i class="bi-lightning-charge-fill"></i>
                     <span>VeriTransGH</span>
                 </a>
-
-                <div class="d-lg-none ms-auto me-4">
-                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-                </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -231,11 +205,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About Us</a>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="purposeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Purpose</a>
                             <ul class="dropdown-menu" aria-labelledby="purposeDropdown">
@@ -243,7 +215,6 @@
                                 <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" href="#" id="evHubDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EV Hub</a>
                             <ul class="dropdown-menu" aria-labelledby="evHubDropdown">
@@ -253,19 +224,13 @@
                                 <li><a class="dropdown-item" href="index.html#section_3">How it Works</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#section_4">FAQs</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#section_5">Contact</a>
                         </li>
                     </ul>
-
-                    <div class="d-none d-lg-block">
-                        <a href="#" class="custom-btn btn">Get the App</a>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -283,442 +248,309 @@
                             </ol>
                         </nav>
                         <h2 class="text-white">EV Charging Stations</h2>
-                        <p class="text-white mt-3 mb-0" style="opacity: 0.9;">Find verified charging stations across Ghana and Africa. Real-time availability, pricing, and navigation.</p>
+                        <p class="text-white mt-3 mb-0" style="opacity: 0.9;">Find verified charging stations across Ghana. Get real-time availability, directions, and charging details.</p>
                     </div>
                 </div>
             </div>
         </header>
 
         <!-- Stats Section -->
+        <section class="section-padding pb-0">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-3 col-6">
+                        <div class="stats-card">
+                            <div class="stats-number">45+</div>
+                            <div class="stats-label">Charging Stations</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stats-card">
+                            <div class="stats-number">12</div>
+                            <div class="stats-label">Cities Covered</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stats-card">
+                            <div class="stats-number">150+</div>
+                            <div class="stats-label">Charging Points</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stats-card">
+                            <div class="stats-number">24/7</div>
+                            <div class="stats-label">Availability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
         <section class="section-padding">
             <div class="container">
-                <div class="stats-row">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-6 mb-4 mb-lg-0">
-                            <div class="stat-item">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">Charging Stations</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-6 mb-4 mb-lg-0">
-                            <div class="stat-item">
-                                <div class="stat-number">10+</div>
-                                <div class="stat-label">Cities Covered</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-6">
-                            <div class="stat-item">
-                                <div class="stat-number">24/7</div>
-                                <div class="stat-label">Availability</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-6">
-                            <div class="stat-item">
-                                <div class="stat-number">100%</div>
-                                <div class="stat-label">Verified Locations</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Search and Filters -->
-                <div class="row mb-5">
-                    <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                        <div class="search-box">
-                            <i class="bi-search"></i>
-                            <input type="text" placeholder="Search by location, city, or station name...">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-12">
-                        <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-                            <button class="filter-btn active">All Stations</button>
-                            <button class="filter-btn">Fast Charging</button>
-                            <button class="filter-btn">Available Now</button>
-                            <button class="filter-btn">Near Me</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Map Section -->
                 <div class="row mb-5">
                     <div class="col-12">
-                        <h3 class="mb-4">Station Locations</h3>
-                        <div class="station-map-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254193.27866980476!2d-0.28532739453124983!3d5.592405699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9084b2b7a773%3A0xbed14ed8650e2dd3!2sAccra%2C%20Ghana!5e0!3m2!1sen!2sus!4v1703000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            <div class="map-overlay d-none d-md-block">
-                                <h6 class="mb-3">Quick Stats</h6>
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="station-status status-available me-2">
-                                        <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
-                                    </span>
-                                    <span class="ms-auto fw-bold">42</span>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="station-status status-busy me-2">
-                                        <i class="bi-circle-fill" style="font-size: 8px;"></i> Busy
-                                    </span>
-                                    <span class="ms-auto fw-bold">6</span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <span class="station-status status-offline me-2">
-                                        <i class="bi-circle-fill" style="font-size: 8px;"></i> Offline
-                                    </span>
-                                    <span class="ms-auto fw-bold">2</span>
-                                </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254175.77099991907!2d-0.3457737!3d5.5912885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9084b2b7a773%3A0xbed14ed8650e2dd3!2sAccra%2C%20Ghana!5e0!3m2!1sen!2s!4v1702670000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search and Filter -->
+                <div class="search-filter-box">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0"><i class="bi-search"></i></span>
+                                <input type="text" class="form-control border-start-0" placeholder="Search by location or station name...">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button class="filter-btn active">All Stations</button>
+                                <button class="filter-btn">Available</button>
+                                <button class="filter-btn">Fast Charging</button>
+                                <button class="filter-btn">24/7</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Station Cards -->
-                <div class="row">
-                    <div class="col-12">
-                        <h3 class="mb-4">Featured Stations</h3>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <!-- Stations Grid -->
+                <div class="row g-4">
+                    <!-- Station 1 -->
+                    <div class="col-lg-4 col-md-6">
                         <div class="station-card">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <div class="station-icon">
-                                    <i class="bi-ev-station"></i>
+                            <div class="station-card-img">
+                                <img src="images/ev_faqs.jpg" alt="Station">
+                                <span class="station-status status-available">Available</span>
+                            </div>
+                            <div class="station-card-body">
+                                <h5 class="station-name">Accra Mall Station</h5>
+                                <p class="station-address"><i class="bi-geo-alt me-1"></i>Tetteh Quarshie, Accra</p>
+                                <div class="station-details">
+                                    <div class="station-detail"><i class="bi-lightning-charge"></i><span>50 kW DC Fast</span></div>
+                                    <div class="station-detail"><i class="bi-plug"></i><span>4 Ports</span></div>
+                                    <div class="station-detail"><i class="bi-clock"></i><span>24/7</span></div>
                                 </div>
-                                <span class="station-status status-available">
-                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
-                                </span>
-                            </div>
-                            <h5 class="mb-2">Accra Mall Station</h5>
-                            <p class="text-muted mb-3">
-                                <i class="bi-geo-alt me-1"></i>
-                                Accra Mall, Spintex Road, Accra
-                            </p>
-                            <div class="mb-3">
-                                <span class="charger-type">Type 2</span>
-                                <span class="charger-type">CCS</span>
-                                <span class="charger-type">50kW</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>4 Chargers</span>
-                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                                <div class="station-actions">
+                                    <a href="#" class="btn-directions">Get Directions</a>
+                                    <a href="#" class="btn-details"><i class="bi-info-circle"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <!-- Station 2 -->
+                    <div class="col-lg-4 col-md-6">
                         <div class="station-card">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <div class="station-icon">
-                                    <i class="bi-ev-station"></i>
+                            <div class="station-card-img">
+                                <img src="images/mission.jpg" alt="Station">
+                                <span class="station-status status-busy">2 Available</span>
+                            </div>
+                            <div class="station-card-body">
+                                <h5 class="station-name">Marina Mall Station</h5>
+                                <p class="station-address"><i class="bi-geo-alt me-1"></i>Airport City, Accra</p>
+                                <div class="station-details">
+                                    <div class="station-detail"><i class="bi-lightning-charge"></i><span>150 kW DC Ultra</span></div>
+                                    <div class="station-detail"><i class="bi-plug"></i><span>6 Ports</span></div>
+                                    <div class="station-detail"><i class="bi-clock"></i><span>6AM - 10PM</span></div>
                                 </div>
-                                <span class="station-status status-available">
-                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
-                                </span>
-                            </div>
-                            <h5 class="mb-2">Osu Oxford Street</h5>
-                            <p class="text-muted mb-3">
-                                <i class="bi-geo-alt me-1"></i>
-                                Oxford Street, Osu, Accra
-                            </p>
-                            <div class="mb-3">
-                                <span class="charger-type">Type 2</span>
-                                <span class="charger-type">CHAdeMO</span>
-                                <span class="charger-type">22kW</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>2 Chargers</span>
-                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                                <div class="station-actions">
+                                    <a href="#" class="btn-directions">Get Directions</a>
+                                    <a href="#" class="btn-details"><i class="bi-info-circle"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <!-- Station 3 -->
+                    <div class="col-lg-4 col-md-6">
                         <div class="station-card">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <div class="station-icon">
-                                    <i class="bi-ev-station"></i>
+                            <div class="station-card-img">
+                                <img src="images/ev_faqs.jpg" alt="Station">
+                                <span class="station-status status-available">Available</span>
+                            </div>
+                            <div class="station-card-body">
+                                <h5 class="station-name">West Hills Mall</h5>
+                                <p class="station-address"><i class="bi-geo-alt me-1"></i>Weija, Accra</p>
+                                <div class="station-details">
+                                    <div class="station-detail"><i class="bi-lightning-charge"></i><span>22 kW AC</span></div>
+                                    <div class="station-detail"><i class="bi-plug"></i><span>8 Ports</span></div>
+                                    <div class="station-detail"><i class="bi-clock"></i><span>24/7</span></div>
                                 </div>
-                                <span class="station-status status-busy">
-                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Busy
-                                </span>
-                            </div>
-                            <h5 class="mb-2">East Legon Hub</h5>
-                            <p class="text-muted mb-3">
-                                <i class="bi-geo-alt me-1"></i>
-                                A&C Mall, East Legon, Accra
-                            </p>
-                            <div class="mb-3">
-                                <span class="charger-type">Type 2</span>
-                                <span class="charger-type">CCS</span>
-                                <span class="charger-type">150kW</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>6 Chargers</span>
-                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                                <div class="station-actions">
+                                    <a href="#" class="btn-directions">Get Directions</a>
+                                    <a href="#" class="btn-details"><i class="bi-info-circle"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <!-- Station 4 -->
+                    <div class="col-lg-4 col-md-6">
                         <div class="station-card">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <div class="station-icon">
-                                    <i class="bi-ev-station"></i>
+                            <div class="station-card-img">
+                                <img src="images/mission.jpg" alt="Station">
+                                <span class="station-status status-available">Available</span>
+                            </div>
+                            <div class="station-card-body">
+                                <h5 class="station-name">Kumasi City Mall</h5>
+                                <p class="station-address"><i class="bi-geo-alt me-1"></i>Asokwa, Kumasi</p>
+                                <div class="station-details">
+                                    <div class="station-detail"><i class="bi-lightning-charge"></i><span>50 kW DC Fast</span></div>
+                                    <div class="station-detail"><i class="bi-plug"></i><span>4 Ports</span></div>
+                                    <div class="station-detail"><i class="bi-clock"></i><span>7AM - 9PM</span></div>
                                 </div>
-                                <span class="station-status status-available">
-                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
-                                </span>
-                            </div>
-                            <h5 class="mb-2">Kumasi City Mall</h5>
-                            <p class="text-muted mb-3">
-                                <i class="bi-geo-alt me-1"></i>
-                                Asokwa, Kumasi
-                            </p>
-                            <div class="mb-3">
-                                <span class="charger-type">Type 2</span>
-                                <span class="charger-type">CCS</span>
-                                <span class="charger-type">50kW</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>3 Chargers</span>
-                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                                <div class="station-actions">
+                                    <a href="#" class="btn-directions">Get Directions</a>
+                                    <a href="#" class="btn-details"><i class="bi-info-circle"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <!-- Station 5 -->
+                    <div class="col-lg-4 col-md-6">
                         <div class="station-card">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <div class="station-icon">
-                                    <i class="bi-ev-station"></i>
+                            <div class="station-card-img">
+                                <img src="images/ev_faqs.jpg" alt="Station">
+                                <span class="station-status status-offline">Maintenance</span>
+                            </div>
+                            <div class="station-card-body">
+                                <h5 class="station-name">Tema Community 25</h5>
+                                <p class="station-address"><i class="bi-geo-alt me-1"></i>Community 25, Tema</p>
+                                <div class="station-details">
+                                    <div class="station-detail"><i class="bi-lightning-charge"></i><span>150 kW DC Ultra</span></div>
+                                    <div class="station-detail"><i class="bi-plug"></i><span>4 Ports</span></div>
+                                    <div class="station-detail"><i class="bi-clock"></i><span>24/7</span></div>
                                 </div>
-                                <span class="station-status status-available">
-                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
-                                </span>
-                            </div>
-                            <h5 class="mb-2">Takoradi Harbor</h5>
-                            <p class="text-muted mb-3">
-                                <i class="bi-geo-alt me-1"></i>
-                                Harbor Area, Takoradi
-                            </p>
-                            <div class="mb-3">
-                                <span class="charger-type">Type 2</span>
-                                <span class="charger-type">22kW</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>2 Chargers</span>
-                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                                <div class="station-actions">
+                                    <a href="#" class="btn-directions">Get Directions</a>
+                                    <a href="#" class="btn-details"><i class="bi-info-circle"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <!-- Station 6 -->
+                    <div class="col-lg-4 col-md-6">
                         <div class="station-card">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <div class="station-icon">
-                                    <i class="bi-ev-station"></i>
+                            <div class="station-card-img">
+                                <img src="images/mission.jpg" alt="Station">
+                                <span class="station-status status-available">Available</span>
+                            </div>
+                            <div class="station-card-body">
+                                <h5 class="station-name">Takoradi Mall</h5>
+                                <p class="station-address"><i class="bi-geo-alt me-1"></i>Takoradi, Western Region</p>
+                                <div class="station-details">
+                                    <div class="station-detail"><i class="bi-lightning-charge"></i><span>50 kW DC Fast</span></div>
+                                    <div class="station-detail"><i class="bi-plug"></i><span>4 Ports</span></div>
+                                    <div class="station-detail"><i class="bi-clock"></i><span>6AM - 10PM</span></div>
                                 </div>
-                                <span class="station-status status-offline">
-                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Maintenance
-                                </span>
-                            </div>
-                            <h5 class="mb-2">Tema Industrial</h5>
-                            <p class="text-muted mb-3">
-                                <i class="bi-geo-alt me-1"></i>
-                                Industrial Area, Tema
-                            </p>
-                            <div class="mb-3">
-                                <span class="charger-type">Type 2</span>
-                                <span class="charger-type">CCS</span>
-                                <span class="charger-type">350kW</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>8 Chargers</span>
-                                <a href="#" class="btn btn-sm btn-outline-secondary disabled">Unavailable</a>
+                                <div class="station-actions">
+                                    <a href="#" class="btn-directions">Get Directions</a>
+                                    <a href="#" class="btn-details"><i class="bi-info-circle"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Load More -->
-                <div class="row mt-4">
-                    <div class="col-12 text-center">
-                        <a href="#" class="custom-btn btn">Load More Stations</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How to Use Section -->
-        <section class="section-padding section-bg">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                        <span class="section-badge">Quick Guide</span>
-                        <h2 class="mb-4">How to Charge Your EV</h2>
-                        <p class="mb-4">Using VeriTransGH charging stations is simple and convenient. Follow these easy steps to get started.</p>
-                        
-                        <div class="how-it-works-mini">
-                            <div class="step-mini">
-                                <div class="step-number-mini">1</div>
-                                <div>
-                                    <h6 class="mb-1">Find a Station</h6>
-                                    <p class="mb-0 text-muted">Use the app or map above to locate the nearest available charging station.</p>
-                                </div>
-                            </div>
-                            <div class="step-mini">
-                                <div class="step-number-mini">2</div>
-                                <div>
-                                    <h6 class="mb-1">Plug In</h6>
-                                    <p class="mb-0 text-muted">Connect your vehicle using the appropriate charging cable (Type 2, CCS, or CHAdeMO).</p>
-                                </div>
-                            </div>
-                            <div class="step-mini">
-                                <div class="step-number-mini">3</div>
-                                <div>
-                                    <h6 class="mb-1">Start Charging</h6>
-                                    <p class="mb-0 text-muted">Scan the QR code or use the app to authenticate and begin your charging session.</p>
-                                </div>
-                            </div>
-                            <div class="step-mini">
-                                <div class="step-number-mini">4</div>
-                                <div>
-                                    <h6 class="mb-1">Pay & Go</h6>
-                                    <p class="mb-0 text-muted">Payment is automatic through the app. Unplug and continue your journey.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5 col-12 ms-auto">
-                        <div class="custom-block-wrap">
-                            <img src="images/ev_faqs.jpg" class="img-fluid rounded-4" alt="EV Charging">
-                        </div>
-
-                        <div class="row mt-4">
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="station-icon me-3" style="width: 50px; height: 50px;">
-                                        <i class="bi-clock" style="font-size: 20px;"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0">30 min</h5>
-                                        <small class="text-muted">Avg. Fast Charge</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="station-icon me-3" style="width: 50px; height: 50px;">
-                                        <i class="bi-wallet2" style="font-size: 20px;"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0">GHS 2.50</h5>
-                                        <small class="text-muted">Per kWh</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center mt-5">
+                    <button class="btn custom-btn">Load More Stations</button>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="section-padding">
+        <section class="section-padding" style="background: #f8f9fa;">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-12 mx-auto text-center">
-                        <span class="section-badge">Get Started</span>
-                        <h2 class="mb-4">Download the VeriTransGH App</h2>
-                        <p class="mb-5">Access all charging stations, real-time availability, and seamless payments from your smartphone.</p>
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-                            <a href="#" class="custom-btn btn">
-                                <i class="bi-google-play me-2"></i>Google Play
-                            </a>
-                            <a href="#" class="custom-btn-secondary btn">
-                                <i class="bi-apple me-2"></i>App Store
-                            </a>
-                        </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-12 mb-4 mb-lg-0">
+                        <h3 class="mb-3">Can't Find a Station Near You?</h3>
+                        <p class="text-muted mb-0">We're constantly expanding our network. Let us know where you'd like to see a charging station, and help us bring EV infrastructure to your area.</p>
+                    </div>
+                    <div class="col-lg-5 col-12 text-lg-end">
+                        <a href="index.html#section_5" class="btn custom-btn">Request a Station</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
+    <!-- Footer (matching home page) -->
+    <footer class="footer-full-width">
+        <div class="container py-5">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <a class="navbar-brand mb-3 d-block" href="index.html">
-                        <i class="bi-ev-station"></i>
-                        <span>VeriTransGH</span>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <a class="navbar-brand d-flex align-items-center mb-3 text-white" href="index.html">
+                        <i class="bi-lightning-charge-fill text-success me-2"></i>
+                        <span class="fw-bold fs-4">VeriTransGH</span>
                     </a>
-                    <p class="mb-4">Powering Africa's transition to sustainable electric transportation with verified charging infrastructure.</p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 col-6">
-                    <h6 class="site-footer-title">Platform</h6>
-                    <ul class="site-footer-links">
-                        <li><a href="topics-listing.html">Charging Stations</a></li>
-                        <li><a href="News_letter.html">EV News</a></li>
-                        <li><a href="index.html#section_3">How it Works</a></li>
-                        <li><a href="#">Driver App</a></li>
+                    <p class="text-secondary small">Verified infrastructure for electric vehicle mobility. Connecting drivers to reliable EV stations across Ghana.</p>
+                    <ul class="social-icon mt-4">
+                        <li class="social-icon-item"><a href="#" class="social-icon-link"><i class="bi-facebook"></i></a></li>
+                        <li class="social-icon-item"><a href="#" class="social-icon-link"><i class="bi-twitter"></i></a></li>
+                        <li class="social-icon-item"><a href="#" class="social-icon-link"><i class="bi-instagram"></i></a></li>
+                        <li class="social-icon-item"><a href="#" class="social-icon-link"><i class="bi-linkedin"></i></a></li>
                     </ul>
                 </div>
-
-                <div class="col-lg-2 col-md-6 col-6">
-                    <h6 class="site-footer-title">Company</h6>
-                    <ul class="site-footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="mission.html">Our Mission</a></li>
-                        <li><a href="vision.html">Our Vision</a></li>
-                        <li><a href="index.html#section_5">Contact</a></li>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-white fw-bold text-uppercase mb-3 small">Platform</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link-plain">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="footer-link-plain">About Us</a></li>
+                        <li class="mb-2"><a href="mission.html" class="footer-link-plain">Our Mission</a></li>
+                        <li class="mb-2"><a href="vision.html" class="footer-link-plain">Our Vision</a></li>
                     </ul>
                 </div>
-
-                <div class="col-lg-4 col-md-6 col-12 mt-4 mt-lg-0">
-                    <h6 class="site-footer-title">Contact Info</h6>
-                    <p class="mb-2">
-                        <i class="bi-geo-alt me-2"></i>
-                        Accra, Ghana
-                    </p>
-                    <p class="mb-2">
-                        <i class="bi-envelope me-2"></i>
-                        <a href="/cdn-cgi/l/email-protection#d7beb9b1b897a1b2a5bea3a5b6b9a4b0bff9b4b8ba"><span class="__cf_email__" data-cfemail="aac3c4ccc5eadccfd8c3ded8cbc4d9cdc284c9c5c7">[email&#160;protected]</span></a>
-                    </p>
-                    <p class="mb-0">
-                        <i class="bi-telephone me-2"></i>
-                        <a href="tel:+233000000000">+233 00 000 0000</a>
-                    </p>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-white fw-bold text-uppercase mb-3 small">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="topics-listing.html" class="footer-link-plain">EV Stations</a></li>
+                        <li class="mb-2"><a href="News_letter.html" class="footer-link-plain">EV News</a></li>
+                        <li class="mb-2"><a href="index.html#section_4" class="footer-link-plain">FAQs</a></li>
+                        <li class="mb-2"><a href="index.html#section_5" class="footer-link-plain">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="text-white fw-bold text-uppercase mb-3 small">Contact Information</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-3"><i class="bi-geo-alt text-success me-2"></i> Accra, Ghana</li>
+                        <li class="mb-3"><a href="tel:+233240000000" class="footer-link-plain"><i class="bi-telephone text-success me-2"></i> +233 (0) 24 000 0000</a></li>
+                        <li class="mb-3"><a href="mailto:info@veritransgh.com" class="footer-link-plain"><i class="bi-envelope text-success me-2"></i> info@veritransgh.com</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="row mt-5 pt-4 border-top border-secondary">
-                <div class="col-lg-6 col-12">
-                    <p class="copyright-text mb-0">Copyright 2024 VeriTransGH. All rights reserved.</p>
+            <hr class="border-secondary opacity-25 my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-secondary small mb-0">2025 VeriTransGH. All rights reserved.</p>
                 </div>
-                <div class="col-lg-6 col-12 text-lg-end">
-                    <a href="#" class="me-3">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="footer-link-plain me-3 small">Privacy Policy</a>
+                    <a href="#" class="footer-link-plain small">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- JAVASCRIPT FILES -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
-    <script src="js/click-scroll.js"></script>
     <script src="js/custom.js"></script>
 
     <script>
-        // Filter buttons functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
