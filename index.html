@@ -3,35 +3,32 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <meta name="description" content="">
-        <meta name="author" content="">
-
+        <meta name="description" content="VeriTransGH - Verified Global E-Transport. Powering sustainable mobility across Africa with electric vehicle infrastructure and smart transportation solutions.">
+        <meta name="author" content="VeriTransGH">
         <title>VeriTransGH - Verified Global E-Transport</title>
 
-        <!-- CSS FILES -->        
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="images/favicon.png">
+
+        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-                        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-
-        <link href="css/verified.css" rel="stylesheet">      
-
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+        
+        <!-- CSS Files -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/verified.css" rel="stylesheet">
     </head>
     
     <body id="top">
 
         <main>
-
-            <nav class="navbar navbar-expand-lg">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="index.html">
-                        <i class="bi-back"></i>
+                        <i class="bi-lightning-charge-fill"></i>
                         <span>VeriTransGH</span>
                     </a>
     
@@ -42,24 +39,31 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-lg-5 me-lg-auto">
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                                <a class="nav-link active" href="index.html">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">About Us</a>
+                                <a class="nav-link" href="about.html">About Us</a>
                             </li>
+
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">EV Hub</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Purpose</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
+                                    <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
+                                </ul>
+                            </li>
 
-                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">EV Hub</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                     <li><a class="dropdown-item" href="topics-listing.html">Charge Stations</a></li>
-
                                     <li><a class="dropdown-item" href="News_letter.html">Newsletter</a></li>
                                 </ul>
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3">How it works</a>
+                                <a class="nav-link click-scroll" href="#section_3">How it Works</a>
                             </li>
 
                             <li class="nav-item">
@@ -69,350 +73,138 @@
                             <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_5">Contact</a>
                             </li>
-
-                            
                         </ul>
-                        <!---->
-                    
                     </div>
                 </div>
             </nav>
             
 
+            <!-- Hero Section -->
             <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
                 <div class="container">
                     <div class="row">
-
-                        <div class="col-lg-8 col-12 mx-auto">
-                            <h1 class="text-white text-center">VeriTransGH - Verified Global E-Transport</h1>
-
-                          
+                        <div class="col-lg-10 col-12 mx-auto text-center">
+                            <span class="section-badge">Sustainable Transport Solutions</span>
+                            <h1 class="text-white">Powering Africa's Electric Future</h1>
+                            <p>VeriTransGH connects passengers, drivers, and operators through verified, sustainable transportation infrastructure across Ghana and beyond.</p>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                <a href="#section_3" class="btn btn-primary">Get Started</a>
+                                <a href="about.html" class="btn btn-outline-light">Learn More</a>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-                <!--  Home Page the right session-->
+
+            <!-- Featured Section - App Showcase -->
             <section class="featured-section section-padding" id="section_2">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <div class="col-lg-5 col-12 mb-4 mb-lg-0">
-                <div class="custom-block bg-white shadow-lg text-center p-4">
-                    <h5 class="mb-3">Our Mobile App</h5>
-                    
-                    <div class="phone-mockup mb-4">
-                        <img src="images/ev-app-screen-mockup.png" class="img-fluid rounded-4 shadow-sm" alt="EV Station App Screen">
-                    </div>
-
-                    <p class="text-muted small mb-3">Find and manage your charging sessions on the go.</p>
-
-                    <a href="https://play.google.com/store" target="_blank" class="d-inline-block">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 50px;"></a>
-                </div>
-            </div>
-
-            <div class="col-lg-7 col-12">
-                <div class="custom-block custom-block-overlay">
-                    <div class="d-flex flex-column h-100">
-                        
-                        <div class="video-container ratio ratio-16x9 shadow-lg">
-                            <video controls poster="images/ev-video-thumbnail.jpg" class="rounded-4">
-                                <source src="videos/ev-station-demo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-
-                        <div class="custom-block-overlay-text mt-3">
-                            <h5 class="text-white">Experience our EV Stations</h5>
-                            <p class="text-white">Watch how we are powering the future of sustainable transport with our easy-to-use EV stations.</p>
-                        </div>
-
-                        <div class="section-overlay"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!--   About  -->
-            <section class="explore-section section-padding" id="section_2">
                 <div class="container">
-                    <div class="row">
+                    <div class="row align-items-center">
 
-                        <div class="col-12 text-center">
-                            <h2 class="mb-4">Bus Transportation System Apps</h1>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="container-fluid">
-                    <div class="row">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true"> About VGET</button>
-                            </li>
-    
-
-                            
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-12">
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">What We Do</h5>
-
-                                                            <p class="mb-0", style="text-align: justify;">VGET is more than a website. It is a scalable digital platform built to support individuals, businesses, governments, and transport operators.</p>
-                                                        </div>
-
-                                            
-                                                    </div>
-
-                                                    <img src="images/mission.jpg" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Our Mission</h5>
-                                                               
-                                                                <p class="mb-0", style="text-align: justify;">To enable smarter mobility decisions and accelerate the adoption of clean transport 
-                                                                    across Africa through reliable data, digital innovation, and verified transport services.</p>
-                                                        </div>
-
-
-                                                    </div>
-
-                                                    <img src="images/vission.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Our Vision</h5>
-
-                                                                <p class="mb-0", style="text-align: justify;">We envision African cities and transport systems that are:
-
-                                                                                   <li> Efficient and connected </li>
-
-                                                                                    <li>   Environmentally sustainable </li>
-
-                                                                                  <li>   Data-driven and inclusive</li>
-
-                                                                                    Ready for the future of electric mobility</p>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <img src="images/Vget buus.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                        <div class="col-lg-5 col-12 mb-5 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg text-center p-4">
+                                <h5 class="mb-3">Our Mobile App</h5>
                                 
-
-                                <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Investment</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="custom-block custom-block-overlay">
-                                                <div class="d-flex flex-column h-100">
-                                                    <img src="images/Phone.png" class="custom-block-image img-fluid" alt="">
-
-                                                    <div class="custom-block-overlay-text d-flex">
-                                                        <div>
-                                                            <h5 class="text-white mb-2">VeriTransGH</h5>
-
-                                                            <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis</p>
-
-                                                            <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
-                                                        </div>
-
-                                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
-                                                    </div>
-
-                                                    <div class="social-share d-flex">
-                                                        <p class="text-white me-4">Share:</p>
-
-                                                        <ul class="social-icon">
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-twitter"></a>
-                                                            </li>
-
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-facebook"></a>
-                                                            </li>
-
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-pinterest"></a>
-                                                            </li>
-                                                        </ul>
-
-                                                        <a href="#" class="custom-icon bi-bookmark ms-auto"></a>
-                                                    </div>
-
-                                                    <div class="section-overlay"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="phone-mockup mb-4">
+                                    <img src="images/ev-app-screen-mockup.png" class="img-fluid rounded-4 shadow-sm" alt="EV Station App Screen">
                                 </div>
 
-                                <div class="tab-pane fade" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Composing Song</h5>
+                                <p class="text-muted small mb-4">Find and manage your charging sessions on the go with real-time station availability.</p>
 
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
+                                <a href="https://play.google.com/store" target="_blank" class="d-inline-block">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 50px;">
+                                </a>
+                            </div>
+                        </div>
 
-                                                        <span class="badge bg-music rounded-pill ms-auto">45</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Compose_music_re_wpiw.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Online Music</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-music rounded-pill ms-auto">45</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_happy_music_g6wc.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Podcast</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-music rounded-pill ms-auto">20</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Podcast_audience_re_4i5q.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
+                        <div class="col-lg-7 col-12">
+                            <div class="custom-block-overlay">
+                                <div class="d-flex flex-column h-100">
+                                    
+                                    <div class="video-container ratio ratio-16x9 shadow-lg">
+                                        <video controls poster="images/ev-video-thumbnail.jpg" class="rounded-4">
+                                            <source src="videos/ev-station-demo.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
                                     </div>
-                                </div>
 
-                                <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Graduation</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Graduation_re_gthn.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Educator</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-education rounded-pill ms-auto">75</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Educator_re_ju47.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
+                                    <div class="custom-block-overlay-text mt-4">
+                                        <h5 class="text-white">Experience Our EV Stations</h5>
+                                        <p class="text-white mb-0">Watch how we are powering the future of sustainable transport with our easy-to-use EV stations across Ghana.</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
                     </div>
                 </div>
             </section>
 
-            <!--  About closs-->
+
+            <!-- About Preview Section -->
+            <section class="section-padding">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-badge">About VGET</span>
+                        <h2>Bus Transportation System Apps</h2>
+                        <p>VGET is more than a website. It is a scalable digital platform built to support individuals, businesses, governments, and transport operators.</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="custom-block">
+                                <a href="about.html">
+                                    <div class="custom-block-icon">
+                                        <i class="bi-gear-fill"></i>
+                                    </div>
+                                    <h5>What We Do</h5>
+                                    <p class="mb-3">VGET is a scalable digital platform built to support individuals, businesses, governments, and transport operators in building smarter mobility solutions.</p>
+                                    <img src="images/mission.jpg" class="custom-block-image img-fluid" alt="What We Do">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="custom-block">
+                                <a href="mission.html">
+                                    <div class="custom-block-icon">
+                                        <i class="bi-bullseye"></i>
+                                    </div>
+                                    <h5>Our Mission</h5>
+                                    <p class="mb-3">To enable smarter mobility decisions and accelerate the adoption of clean transport across Africa through reliable data and digital innovation.</p>
+                                    <img src="images/vission.png" class="custom-block-image img-fluid" alt="Our Mission">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="custom-block">
+                                <a href="vision.html">
+                                    <div class="custom-block-icon">
+                                        <i class="bi-eye-fill"></i>
+                                    </div>
+                                    <h5>Our Vision</h5>
+                                    <p class="mb-3">We envision African cities and transport systems that are efficient, connected, environmentally sustainable, and ready for electric mobility.</p>
+                                    <img src="images/Vget buus.png" class="custom-block-image img-fluid" alt="Our Vision">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
+            <!-- How It Works Section -->
             <section class="timeline-section section-padding" id="section_3">
                 <div class="section-overlay"></div>
 
                 <div class="container">
                     <div class="row">
-
-                        <div class="col-12 text-center">
-                            <h2 class="text-white mb-4">How does it work?</h1>
+                        <div class="col-12 text-center mb-5">
+                            <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff;">Process</span>
+                            <h2 class="text-white mb-3">How Does It Work?</h2>
+                            <p class="text-white-50 mx-auto" style="max-width: 500px;">Our streamlined process connects passengers with reliable transport services in three simple steps.</p>
                         </div>
 
                         <div class="col-lg-10 col-12 mx-auto">
@@ -424,77 +216,65 @@
 
                                     <li>
                                         <h4 class="text-white mb-3">Passenger Books</h4>
-
-                                        <p class="text-white">Customer uses Passenger App to book ticket and select pickup point</p>
-
+                                        <p class="text-white">Customer uses the Passenger App to book a ticket and select their preferred pickup point. Real-time availability and pricing are displayed for transparency.</p>
                                         <div class="icon-holder">
-                                          <i class="bi-search"></i>
+                                            <i class="bi-search"></i>
                                         </div>
                                     </li>
                                     
                                     <li>
                                         <h4 class="text-white mb-3">Station Manages</h4>
-
-                                        <p class="text-white">Bus Driver App shows booking details and navigation to pickup</p>
-
+                                        <p class="text-white">The Bus Driver App shows booking details and provides navigation to pickup locations. Drivers receive real-time updates and passenger information.</p>
                                         <div class="icon-holder">
-                                          <i class="bi-bookmark"></i>
+                                            <i class="bi-geo-alt"></i>
                                         </div>
                                     </li>
 
                                     <li>
-                                        <h4 class="text-white mb-3">Read &amp; Enjoy</h4>
-
-                                        <p class="text-white">DOP App handles check-ins, route planning, and station operations</p>
-
+                                        <h4 class="text-white mb-3">Travel with Confidence</h4>
+                                        <p class="text-white">The DOP App handles check-ins, route planning, and station operations. Passengers enjoy a seamless, verified travel experience from start to finish.</p>
                                         <div class="icon-holder">
-                                          <i class="bi-book"></i>
+                                            <i class="bi-check-circle"></i>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                       <div class="col-12 text-center mt-5 app-download-cta">
-    <p class="text-white mb-3">
-        Ready to get started? Download the VeriTransGH App today!
-    </p>
-    
-    <a href="#" target="_blank" class="download-link">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 50px;"></a>
-    </a>
-</div>
+                        <div class="col-12 text-center mt-5">
+                            <p class="text-white mb-4">Ready to get started? Download the VeriTransGH App today!</p>
+                            <a href="#" target="_blank">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 50px;">
+                            </a>
+                        </div>
                     </div>
-                </div>f
+                </div>
             </section>
 
 
+            <!-- FAQ Section -->
             <section class="faq-section section-padding" id="section_4">
                 <div class="container">
-                    <div class="row">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                            <span class="section-badge">Support</span>
+                            <h2 class="mb-4">Frequently Asked Questions</h2>
+                            <p class="mb-4">Have questions about VeriTransGH? Find answers to our most commonly asked questions below.</p>
+                            <img src="images/ev_faqs.jpg" class="img-fluid rounded-4" alt="FAQs">
+                        </div>
 
                         <div class="col-lg-6 col-12">
-                            <h2 class="mb-4">Frequently Asked Questions</h2>
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-lg-5 col-12">
-                            <img src="images/ev_faqs.jpg" class="img-fluid" alt="FAQs">
-                        </div>
-
-                        <div class="col-lg-6 col-12 m-auto">
-                            <div class="accordion" id="accordionExample">
+                            <div class="accordion" id="accordionFAQ">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is Topic Listing?
+                                            What is VeriTransGH?
                                         </button>
                                     </h2>
-
-                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
                                         <div class="accordion-body">
-                                            Topic Listing is free Bootstrap 5 CSS template. <strong>You are not allowed to redistribute this template</strong> on any other template collection website without our permission. Please contact TemplateMo for more detail. Thank you.
+                                            VeriTransGH is a verified global e-transport platform designed to power sustainable mobility across Africa. We connect passengers, drivers, and transport operators through our digital infrastructure, making transportation safer, more efficient, and environmentally friendly.
                                         </div>
                                     </div>
                                 </div>
@@ -502,13 +282,12 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        How to find a topic?
-                                    </button>
+                                            How do I book a trip?
+                                        </button>
                                     </h2>
-
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
                                         <div class="accordion-body">
-                                            You can search on Google with <strong>keywords</strong> such as templatemo portfolio, templatemo one-page layouts, photography, digital marketing, etc.
+                                            Download the VeriTransGH Passenger App from the Google Play Store, create an account, select your destination, choose a pickup point, and confirm your booking. You will receive real-time updates about your trip status and driver information.
                                         </div>
                                     </div>
                                 </div>
@@ -516,13 +295,25 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThree">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Does it need to paid?
-                                    </button>
+                                            Where are your EV charging stations located?
+                                        </button>
                                     </h2>
-
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
                                         <div class="accordion-body">
-                                            You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                            Our EV charging stations are strategically located across major cities in Ghana, starting with Accra. You can find the nearest charging station using our app or by visiting the EV Hub section on our website. We are continuously expanding our network.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            Is VeriTransGH available outside Ghana?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+                                        <div class="accordion-body">
+                                            Currently, VeriTransGH operates primarily in Ghana. However, our vision includes expanding across Africa. Stay tuned to our newsletter for updates on new locations and service areas as we grow our network.
                                         </div>
                                     </div>
                                 </div>
@@ -534,135 +325,164 @@
             </section>
 
 
+            <!-- Contact Section -->
             <section class="contact-section py-5 bg-light" id="section_5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Get In Touch</h2>
-            <p class="text-muted">We’re building Ghana’s greenest network together.</p>
-        </div>
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-badge">Contact</span>
+                        <h2>Get In Touch</h2>
+                        <p>We are building Ghana's greenest transport network together. Reach out to us for partnerships, support, or inquiries.</p>
+                    </div>
 
-        <div class="row g-0 overflow-hidden rounded-4 shadow-lg border-0">
-            
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="map-container h-100">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127066.25345142133!2d-0.2335133!3d5.5912086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9084b2b7a773%3A0xbed14ed8650e2dd3!2sAccra%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1690000000000!5m2!1sen!2sgh" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; min-height: 500px; filter: grayscale(0.2) contrast(1.1);" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
+                    <div class="row g-0 overflow-hidden rounded-4 shadow-lg border-0">
+                        
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <div class="map-container h-100">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127066.25345142133!2d-0.2335133!3d5.5912086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9084b2b7a773%3A0xbed14ed8650e2dd3!2sAccra%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1690000000000!5m2!1sen!2sgh" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0; min-height: 550px;" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 p-4 p-md-5 bg-white d-flex flex-column justify-content-center">
+                            <div class="contact-form-wrapper">
+                                <h3 class="fw-bold text-success mb-3">Send us a Message</h3>
+                                <p class="text-muted small mb-4">Need help with an EV station or your account? Fill out the form below and we will get back to you within 24 hours.</p>
+                                
+                                <form id="contactForm" class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold text-dark">Full Name</label>
+                                        <input type="text" class="form-control custom-input" placeholder="e.g. Kwame Mensah" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold text-dark">Email Address</label>
+                                        <input type="email" class="form-control custom-input" placeholder="kwame@example.com" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-bold text-dark">Regarding</label>
+                                        <select class="form-select custom-input">
+                                            <option selected>General Support</option>
+                                            <option>EV Station Partnership</option>
+                                            <option>Technical Issue</option>
+                                            <option>Billing and Payments</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-bold text-dark">Your Message</label>
+                                        <textarea class="form-control custom-input" rows="4" placeholder="How can our team help you?" required></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-success btn-lg w-100 rounded-pill shadow-sm fw-bold">
+                                            Send Message <i class="bi bi-send ms-2"></i>
+                                        </button>
+                                    </div>
+                                </form>
+
+                                <div id="formSuccess" class="alert alert-success mt-4 d-none border-0 shadow-sm" role="alert">
+                                    <i class="bi bi-check-circle-fill me-2"></i> Your message has been sent! We will reply within 24 hours.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="col-lg-6 p-4 p-md-5 bg-white d-flex flex-column justify-content-center">
-                <div class="contact-form-wrapper">
-                    <h3 class="fw-bold text-success mb-3">Send us a Message</h3>
-                    <p class="text-muted small mb-4">Need help with an EV station or your account? Fill out the form below.</p>
-                    
-                    <form id="contactForm" class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label small fw-bold text-dark">Full Name</label>
-                            <input type="text" class="form-control custom-input" placeholder="e.g. Kwame Mensah" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label small fw-bold text-dark">Email Address</label>
-                            <input type="email" class="form-control custom-input" placeholder="kwame@example.com" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label small fw-bold text-dark">Regarding</label>
-                            <select class="form-select custom-input">
-                                <option selected>General Support</option>
-                                <option>EV Station Partnership</option>
-                                <option>Technical Issue</option>
-                                <option>Billing & Payments</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label small fw-bold text-dark">Your Message</label>
-                            <textarea class="form-control custom-input" rows="4" placeholder="How can our team help you?" required></textarea>
-                        </div>
-                        <div class="col-12 mt-4">
-                            <button type="submit" class="btn btn-success btn-lg w-100 rounded-pill shadow-sm fw-bold">
-                                Send Securely <i class="bi bi-shield-check ms-2"></i>
-                            </button>
-                        </div>
-                    </form>
+        </main>
 
-                    <div id="formSuccess" class="alert alert-success mt-4 d-none border-0 shadow-sm" role="alert">
-                        <i class="bi bi-check-circle-fill me-2"></i> Your message has been sent! We'll reply within 24 hours.
+
+        <!-- Footer -->
+        <footer class="footer-full-width">
+            <div class="container py-5">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <a class="navbar-brand d-flex align-items-center mb-3 text-white" href="index.html">
+                            <i class="bi-lightning-charge-fill text-success me-2"></i>
+                            <span class="fw-bold fs-4">VeriTransGH</span>
+                        </a>
+                        <p class="text-secondary small">
+                            Verified infrastructure for electric vehicle mobility. Connecting drivers to reliable EV stations and sustainable transport solutions across Ghana.
+                        </p>
+                        <ul class="social-icon mt-4">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link"><i class="bi-facebook"></i></a>
+                            </li>
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link"><i class="bi-twitter"></i></a>
+                            </li>
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link"><i class="bi-instagram"></i></a>
+                            </li>
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link"><i class="bi-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="text-white fw-bold text-uppercase mb-3 small">Platform</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="footer-link-plain">Home</a></li>
+                            <li class="mb-2"><a href="about.html" class="footer-link-plain">About Us</a></li>
+                            <li class="mb-2"><a href="mission.html" class="footer-link-plain">Our Mission</a></li>
+                            <li class="mb-2"><a href="vision.html" class="footer-link-plain">Our Vision</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="text-white fw-bold text-uppercase mb-3 small">Resources</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="topics-listing.html" class="footer-link-plain">EV Stations</a></li>
+                            <li class="mb-2"><a href="News_letter.html" class="footer-link-plain">Newsletter</a></li>
+                            <li class="mb-2"><a href="#section_4" class="footer-link-plain">FAQs</a></li>
+                            <li class="mb-2"><a href="#section_5" class="footer-link-plain">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h6 class="text-white fw-bold text-uppercase mb-3 small">Contact Information</h6>
+                        <ul class="list-unstyled text-secondary small">
+                            <li class="mb-3">
+                                <i class="bi-geo-alt text-success me-2"></i> Accra, Ghana
+                            </li>
+                            <li class="mb-3">
+                                <a href="tel:+233240000000" class="footer-link-plain">
+                                    <i class="bi-telephone text-success me-2"></i> +233 (0) 24 000 0000
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="mailto:info@veritransgh.com" class="footer-link-plain">
+                                    <i class="bi-envelope text-success me-2"></i> info@veritransgh.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <hr class="border-secondary opacity-25 my-4">
+
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="text-secondary small mb-0">2025 VeriTransGH. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                        <a href="#" class="footer-link-plain me-3 small">Privacy Policy</a>
+                        <a href="#" class="footer-link-plain small">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </footer>
 
 
-
-
-        
-<footer class="footer-full-width">
-    <div class="container py-5">
-        <div class="row">
-
-            <div class="col-lg-4 col-md-12 mb-4">
-                <a class="navbar-brand d-flex align-items-center mb-3 text-white" href="index.html">
-                    <i class="bi-lightning-charge-fill text-success me-2"></i>
-                    <span class="fw-bold fs-4">VeriTransGH</span>
-                </a>
-                <p class="text-secondary small">
-                    Verified infrastructure for electric vehicle mobility. Connecting drivers to reliable EV stations across the nation.
-                </p>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h6 class="text-white fw-bold text-uppercase mb-3 small">Platform</h6>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#section_1" class="footer-link-plain">Home</a></li>
-                    <li class="mb-2"><a href="#section_2" class="footer-link-plain">About Us</a></li>
-                    <li class="mb-2"><a href="#station-section" class="footer-link-plain">EV HUB</a></li>
-                    <li class="mb-2"><a href="#section_3" class="footer-link-plain">How it works</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h6 class="text-white fw-bold text-uppercase mb-3 small">Contact Information</h6>
-                <ul class="list-unstyled text-secondary small">
-                    <li class="mb-2"><i class="bi-geo-alt text-success me-2"></i> Accra, Ghana</li>
-                    <li class="mb-2">
-                        <a href="tel:+233240000000" class="footer-link-plain">
-                            <i class="bi-telephone text-success me-2"></i> +233 (0) 24 000 0000
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:info@veritransgh.com" class="footer-link-plain">
-                            <i class="bi-envelope text-success me-2"></i> info@veritransgh.com
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <hr class="border-secondary opacity-25 my-4">
-
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="text-secondary small mb-0">© 2025 VeriTransGH. All rights reserved.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
-                <a href="#" class="footer-link-plain me-3 small">Privacy Policy</a>
-                <a href="#" class="footer-link-plain small">Terms of Service</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- JavaScript Files -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
