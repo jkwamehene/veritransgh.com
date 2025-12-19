@@ -1,370 +1,731 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find EV charging stations across Ghana and Africa - VeriTransGH verified locations">
+    <meta name="author" content="VeriTransGH">
+    <title>EV Charging Stations | VeriTransGH</title>
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/verified.css" rel="stylesheet">
 
-        <title>VeriTransGH - Verified Global E-Transport</title>
-
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        /* Page-specific styles */
+        .station-map-container {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-                        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-
-        <link href="css/verified.css" rel="stylesheet">
-
-
-
-    </head>
-    
-    <body class="topics-listing-page" id="top">
-
-        <main>
-
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">
-                        <i class="bi-back"></i>
-                        <span>EV</span>
-                    </a>
-
-                    <div class="d-lg-none ms-auto me-4">
-                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-                    </div>
-    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_2">About Us</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-
-                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                    <li><a class="dropdown-item active" href="topics-listing.html">Topics Listing</a></li>
-
-                                    <li><a class="dropdown-item" href="News_letter.html">Newsletter</a></li>
-                                </ul>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_3">How it works</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_4">FAQs</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_5">Contact</a>
-                            </li>
-
-                            
-                        </ul>
-
-                        <div class="d-none d-lg-block">
-                            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-
-            <header class="site-header d-flex flex-column justify-content-center align-items-center">
-                <div class="container">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-5 col-12">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
-
-                                    <li class="breadcrumb-item active" aria-current="page">Topics Listing</li>
-                                </ol>
-                            </nav>
-
-                            <h2 class="text-white">Topics Listing</h2>
-                        </div>
-
-                    </div>
-                </div>
-            </header>
-
-
-            <section class="section-padding">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-12 col-12 text-center">
-                            <h3 class="mb-4">Popular Topics</h3>
-                        </div>
-
-                        <div class="col-lg-8 col-12 mt-3 mx-auto">
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Web Design</h5>
-
-                                            <p class="mb-0">Topic Listing includes home, listing, detail and contact pages. Feel free to modify this template for your custom websites.</p>
-
-                                            <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
-                                        </div>
-
-                                        <span class="badge bg-design rounded-pill ms-auto">14</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="images/topics/undraw_online_ad_re_ol62.png" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Advertising</h5>
-
-                                            <p class="mb-0">Visit TemplateMo website to download free CSS templates. Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus</p>
-
-                                            <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
-                                        </div>
-
-                                        <span class="badge bg-advertising rounded-pill ms-auto">30</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="images/topics/undraw_Podcast_audience_re_4i5q.png" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Podcast</h5>
-
-                                            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus</p>
-
-                                            <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
-                                        </div>
-
-                                        <span class="badge bg-music rounded-pill ms-auto">20</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 col-12">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center mb-0">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">Prev</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="page-item active" aria-current="page">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">5</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">Next</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="section-padding section-bg">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-12 col-12">
-                            <h3 class="mb-4">Trending Topics</h3>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6 col-12 mt-3 mb-4 mb-lg-0">
-                            <div class="custom-block bg-white shadow-lg">
-                                <a href="topics-detail.html">
-                                    <div class="d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Investment</h5>
-
-                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                        </div>
-
-                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
-                                    </div>
-
-                                    <img src="images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid" alt="">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6 col-12 mt-lg-3">
-                            <div class="custom-block custom-block-overlay">
-                                <div class="d-flex flex-column h-100">
-                                    <img src="images/businesswoman-using-tablet-analysis.jpg" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-overlay-text d-flex">
-                                        <div>
-                                            <h5 class="text-white mb-2">Finance</h5>
-
-                                            <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis</p>
-
-                                            <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
-                                        </div>
-
-                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
-                                    </div>
-
-                                    <div class="social-share d-flex">
-                                        <p class="text-white me-4">Share:</p>
-
-                                        <ul class="social-icon">
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-twitter"></a>
-                                            </li>
-
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-facebook"></a>
-                                            </li>
-
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-pinterest"></a>
-                                            </li>
-                                        </ul>
-
-                                        <a href="#" class="custom-icon bi-bookmark ms-auto"></a>
-                                    </div>
-
-                                    <div class="section-overlay"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        </main>
-
-		<footer class="site-footer section-padding">
+        .station-map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            max-width: 300px;
+            z-index: 10;
+        }
+        
+        .station-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .station-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .station-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .station-icon i {
+            font-size: 28px;
+            color: white;
+        }
+        
+        .station-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-available {
+            background: rgba(25, 135, 84, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .status-busy {
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+        }
+        
+        .status-offline {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+        }
+        
+        .charger-type {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #e9ecef;
+            background: white;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .stats-row {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1a2d42 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            padding: 16px 20px 16px 50px;
+            border-radius: 30px;
+            border: 2px solid #e9ecef;
+            width: 100%;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.1);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+        }
+
+        .how-it-works-mini {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .step-mini {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .step-mini:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number-mini {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <main>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <div class="row">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi-ev-station"></i>
+                    <span>VeriTransGH</span>
+                </a>
 
-                    <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="index.html">
-                            <i class="bi-back"></i>
-                            <span>Topic</span>
-                        </a>
-                    </div>
+                <div class="d-lg-none ms-auto me-4">
+                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                </div>
 
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <h6 class="site-footer-title mb-3">Resources</h6>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Home</a>
-                            </li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
 
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">How it works</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
 
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">FAQs</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                        <h6 class="site-footer-title mb-3">Information</h6>
-
-                        <p class="text-white d-flex mb-1">
-                            <a href="tel: 305-240-9671" class="site-footer-link">
-                                305-240-9671
-                            </a>
-                        </p>
-
-                        <p class="text-white d-flex">
-                            <a href="mailto:info@company.com" class="site-footer-link">
-                                info@company.com
-                            </a>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            English</button>
-
-                            <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button">Thai</button></li>
-
-                                <li><button class="dropdown-item" type="button">Myanmar</button></li>
-
-                                <li><button class="dropdown-item" type="button">Arabic</button></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarPurposeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Purpose</a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarPurposeDropdown">
+                                <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
+                                <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
                             </ul>
-                        </div>
+                        </li>
 
-                        <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
-                        <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarEVDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EV Hub</a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarEVDropdown">
+                                <li><a class="dropdown-item active" href="topics-listing.html">Charging Stations</a></li>
+                                <li><a class="dropdown-item" href="News_letter.html">EV News</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="index.html#section_3">How it Works</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#section_4">FAQs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#section_5">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <a href="#" class="custom-btn btn">Get the App</a>
                     </div>
-
                 </div>
             </div>
-        </footer>
+        </nav>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/custom.js"></script>
+        <!-- Hero Header -->
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">EV Hub</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Charging Stations</li>
+                            </ol>
+                        </nav>
+                        <h2 class="text-white">EV Charging Stations</h2>
+                        <p class="text-white mt-3 mb-0" style="opacity: 0.9;">Find verified charging stations across Ghana and Africa. Real-time availability, pricing, and navigation.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    </body>
+        <!-- Stats Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="stats-row">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-6 mb-4 mb-lg-0">
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Charging Stations</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-6 mb-4 mb-lg-0">
+                            <div class="stat-item">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Cities Covered</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-6">
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Availability</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-6">
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Verified Locations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="row mb-5">
+                    <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                        <div class="search-box">
+                            <i class="bi-search"></i>
+                            <input type="text" placeholder="Search by location, city, or station name...">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+                            <button class="filter-btn active">All Stations</button>
+                            <button class="filter-btn">Fast Charging</button>
+                            <button class="filter-btn">Available Now</button>
+                            <button class="filter-btn">Near Me</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Station Locations</h3>
+                        <div class="station-map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254193.27866980476!2d-0.28532739453124983!3d5.592405699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9084b2b7a773%3A0xbed14ed8650e2dd3!2sAccra%2C%20Ghana!5e0!3m2!1sen!2sus!4v1703000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div class="map-overlay d-none d-md-block">
+                                <h6 class="mb-3">Quick Stats</h6>
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="station-status status-available me-2">
+                                        <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
+                                    </span>
+                                    <span class="ms-auto fw-bold">42</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="station-status status-busy me-2">
+                                        <i class="bi-circle-fill" style="font-size: 8px;"></i> Busy
+                                    </span>
+                                    <span class="ms-auto fw-bold">6</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="station-status status-offline me-2">
+                                        <i class="bi-circle-fill" style="font-size: 8px;"></i> Offline
+                                    </span>
+                                    <span class="ms-auto fw-bold">2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Station Cards -->
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="mb-4">Featured Stations</h3>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="station-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="station-icon">
+                                    <i class="bi-ev-station"></i>
+                                </div>
+                                <span class="station-status status-available">
+                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
+                                </span>
+                            </div>
+                            <h5 class="mb-2">Accra Mall Station</h5>
+                            <p class="text-muted mb-3">
+                                <i class="bi-geo-alt me-1"></i>
+                                Accra Mall, Spintex Road, Accra
+                            </p>
+                            <div class="mb-3">
+                                <span class="charger-type">Type 2</span>
+                                <span class="charger-type">CCS</span>
+                                <span class="charger-type">50kW</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>4 Chargers</span>
+                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="station-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="station-icon">
+                                    <i class="bi-ev-station"></i>
+                                </div>
+                                <span class="station-status status-available">
+                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
+                                </span>
+                            </div>
+                            <h5 class="mb-2">Osu Oxford Street</h5>
+                            <p class="text-muted mb-3">
+                                <i class="bi-geo-alt me-1"></i>
+                                Oxford Street, Osu, Accra
+                            </p>
+                            <div class="mb-3">
+                                <span class="charger-type">Type 2</span>
+                                <span class="charger-type">CHAdeMO</span>
+                                <span class="charger-type">22kW</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>2 Chargers</span>
+                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="station-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="station-icon">
+                                    <i class="bi-ev-station"></i>
+                                </div>
+                                <span class="station-status status-busy">
+                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Busy
+                                </span>
+                            </div>
+                            <h5 class="mb-2">East Legon Hub</h5>
+                            <p class="text-muted mb-3">
+                                <i class="bi-geo-alt me-1"></i>
+                                A&C Mall, East Legon, Accra
+                            </p>
+                            <div class="mb-3">
+                                <span class="charger-type">Type 2</span>
+                                <span class="charger-type">CCS</span>
+                                <span class="charger-type">150kW</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>6 Chargers</span>
+                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="station-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="station-icon">
+                                    <i class="bi-ev-station"></i>
+                                </div>
+                                <span class="station-status status-available">
+                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
+                                </span>
+                            </div>
+                            <h5 class="mb-2">Kumasi City Mall</h5>
+                            <p class="text-muted mb-3">
+                                <i class="bi-geo-alt me-1"></i>
+                                Asokwa, Kumasi
+                            </p>
+                            <div class="mb-3">
+                                <span class="charger-type">Type 2</span>
+                                <span class="charger-type">CCS</span>
+                                <span class="charger-type">50kW</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>3 Chargers</span>
+                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="station-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="station-icon">
+                                    <i class="bi-ev-station"></i>
+                                </div>
+                                <span class="station-status status-available">
+                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Available
+                                </span>
+                            </div>
+                            <h5 class="mb-2">Takoradi Harbor</h5>
+                            <p class="text-muted mb-3">
+                                <i class="bi-geo-alt me-1"></i>
+                                Harbor Area, Takoradi
+                            </p>
+                            <div class="mb-3">
+                                <span class="charger-type">Type 2</span>
+                                <span class="charger-type">22kW</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>2 Chargers</span>
+                                <a href="#" class="btn btn-sm btn-outline-success">Navigate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="station-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="station-icon">
+                                    <i class="bi-ev-station"></i>
+                                </div>
+                                <span class="station-status status-offline">
+                                    <i class="bi-circle-fill" style="font-size: 8px;"></i> Maintenance
+                                </span>
+                            </div>
+                            <h5 class="mb-2">Tema Industrial</h5>
+                            <p class="text-muted mb-3">
+                                <i class="bi-geo-alt me-1"></i>
+                                Industrial Area, Tema
+                            </p>
+                            <div class="mb-3">
+                                <span class="charger-type">Type 2</span>
+                                <span class="charger-type">CCS</span>
+                                <span class="charger-type">350kW</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi-lightning-charge me-1"></i>8 Chargers</span>
+                                <a href="#" class="btn btn-sm btn-outline-secondary disabled">Unavailable</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <a href="#" class="custom-btn btn">Load More Stations</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <span class="section-badge">Quick Guide</span>
+                        <h2 class="mb-4">How to Charge Your EV</h2>
+                        <p class="mb-4">Using VeriTransGH charging stations is simple and convenient. Follow these easy steps to get started.</p>
+                        
+                        <div class="how-it-works-mini">
+                            <div class="step-mini">
+                                <div class="step-number-mini">1</div>
+                                <div>
+                                    <h6 class="mb-1">Find a Station</h6>
+                                    <p class="mb-0 text-muted">Use the app or map above to locate the nearest available charging station.</p>
+                                </div>
+                            </div>
+                            <div class="step-mini">
+                                <div class="step-number-mini">2</div>
+                                <div>
+                                    <h6 class="mb-1">Plug In</h6>
+                                    <p class="mb-0 text-muted">Connect your vehicle using the appropriate charging cable (Type 2, CCS, or CHAdeMO).</p>
+                                </div>
+                            </div>
+                            <div class="step-mini">
+                                <div class="step-number-mini">3</div>
+                                <div>
+                                    <h6 class="mb-1">Start Charging</h6>
+                                    <p class="mb-0 text-muted">Scan the QR code or use the app to authenticate and begin your charging session.</p>
+                                </div>
+                            </div>
+                            <div class="step-mini">
+                                <div class="step-number-mini">4</div>
+                                <div>
+                                    <h6 class="mb-1">Pay & Go</h6>
+                                    <p class="mb-0 text-muted">Payment is automatic through the app. Unplug and continue your journey.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12 ms-auto">
+                        <div class="custom-block-wrap">
+                            <img src="images/ev_faqs.jpg" class="img-fluid rounded-4" alt="EV Charging">
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="station-icon me-3" style="width: 50px; height: 50px;">
+                                        <i class="bi-clock" style="font-size: 20px;"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">30 min</h5>
+                                        <small class="text-muted">Avg. Fast Charge</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="station-icon me-3" style="width: 50px; height: 50px;">
+                                        <i class="bi-wallet2" style="font-size: 20px;"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">GHS 2.50</h5>
+                                        <small class="text-muted">Per kWh</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 mx-auto text-center">
+                        <span class="section-badge">Get Started</span>
+                        <h2 class="mb-4">Download the VeriTransGH App</h2>
+                        <p class="mb-5">Access all charging stations, real-time availability, and seamless payments from your smartphone.</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="#" class="custom-btn btn">
+                                <i class="bi-google-play me-2"></i>Google Play
+                            </a>
+                            <a href="#" class="custom-btn-secondary btn">
+                                <i class="bi-apple me-2"></i>App Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <a class="navbar-brand mb-3 d-block" href="index.html">
+                        <i class="bi-ev-station"></i>
+                        <span>VeriTransGH</span>
+                    </a>
+                    <p class="mb-4">Powering Africa's transition to sustainable electric transportation with verified charging infrastructure.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="site-footer-title">Platform</h6>
+                    <ul class="site-footer-links">
+                        <li><a href="topics-listing.html">Charging Stations</a></li>
+                        <li><a href="News_letter.html">EV News</a></li>
+                        <li><a href="index.html#section_3">How it Works</a></li>
+                        <li><a href="#">Driver App</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="site-footer-title">Company</h6>
+                    <ul class="site-footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mission.html">Our Mission</a></li>
+                        <li><a href="vision.html">Our Vision</a></li>
+                        <li><a href="index.html#section_5">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 mt-lg-0">
+                    <h6 class="site-footer-title">Contact Info</h6>
+                    <p class="mb-2">
+                        <i class="bi-geo-alt me-2"></i>
+                        Accra, Ghana
+                    </p>
+                    <p class="mb-2">
+                        <i class="bi-envelope me-2"></i>
+                        <a href="mailto:info@veritransgh.com">info@veritransgh.com</a>
+                    </p>
+                    <p class="mb-0">
+                        <i class="bi-telephone me-2"></i>
+                        <a href="tel:+233000000000">+233 00 000 0000</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4 border-top border-secondary">
+                <div class="col-lg-6 col-12">
+                    <p class="copyright-text mb-0">Copyright 2024 VeriTransGH. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 col-12 text-lg-end">
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        // Filter buttons functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
 </html>

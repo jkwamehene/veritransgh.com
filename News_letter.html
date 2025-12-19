@@ -1,251 +1,773 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Latest EV news, updates, and insights from VeriTransGH - Africa's electric transport platform">
+    <meta name="author" content="VeriTransGH">
+    <title>EV News & Updates | VeriTransGH</title>
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/verified.css" rel="stylesheet">
 
-        <title>Contact Page</title>
-
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        /* Page-specific styles */
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .news-card-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .news-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card:hover .news-card-img img {
+            transform: scale(1.1);
+        }
+        
+        .news-category {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .category-news {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .category-tech {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .category-policy {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .category-guide {
+            background: #06b6d4;
+            color: white;
+        }
+        
+        .news-card-body {
+            padding: 24px;
+        }
+        
+        .news-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .news-card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .news-card-title a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .news-card-title a:hover {
+            color: var(--primary-color);
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 16px;
+            transition: gap 0.3s ease;
+        }
+        
+        .read-more:hover {
+            gap: 10px;
+            color: var(--primary-dark);
+        }
+        
+        .featured-news {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            min-height: 500px;
+        }
+        
+        .featured-news img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: white;
+        }
+        
+        .featured-overlay h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        
+        .newsletter-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            border-radius: 24px;
+            padding: 50px;
+            color: white;
+        }
+        
+        .newsletter-box input {
+            padding: 16px 20px;
+            border: none;
+            border-radius: 12px;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .newsletter-box button {
+            padding: 16px 32px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-box button:hover {
+            background: #1a2d42;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .popular-post {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .popular-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .popular-post-img {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .popular-post-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .popular-post-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .popular-post-title a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .popular-post-title a:hover {
+            color: var(--primary-color);
+        }
+        
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            padding: 6px 14px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #6c757d;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
 
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-                        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        .category-filter {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
 
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        .category-filter-btn {
+            padding: 10px 24px;
+            border: 2px solid #e9ecef;
+            background: white;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #6c757d;
+        }
 
-        <link href="css/verified.css" rel="stylesheet">
+        .category-filter-btn:hover,
+        .category-filter-btn.active {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
 
+<body id="top">
+    <main>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi-ev-station"></i>
+                    <span>VeriTransGH</span>
+                </a>
 
+                <div class="d-lg-none ms-auto me-4">
+                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                </div>
 
-    </head>
-    
-    <body class="topics-listing-page" id="top">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <main>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
 
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">
-                        <i class="bi-back"></i>
-                        <span>Topic</span>
-                    </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
 
-                    <div class="d-lg-none ms-auto me-4">
-                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarPurposeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Purpose</a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarPurposeDropdown">
+                                <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
+                                <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarEVDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EV Hub</a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarEVDropdown">
+                                <li><a class="dropdown-item" href="topics-listing.html">Charging Stations</a></li>
+                                <li><a class="dropdown-item active" href="News_letter.html">EV News</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="index.html#section_3">How it Works</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#section_4">FAQs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#section_5">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <a href="#" class="custom-btn btn">Get the App</a>
                     </div>
-    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
-                            </li>
+                </div>
+            </div>
+        </nav>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_2">About Us</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_3">How it works</a>
-                            </li>
+        <!-- Hero Header -->
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">EV Hub</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">EV News</li>
+                            </ol>
+                        </nav>
+                        <h2 class="text-white">EV News & Updates</h2>
+                        <p class="text-white mt-3 mb-0" style="opacity: 0.9;">Stay informed about the latest developments in electric vehicles, charging infrastructure, and sustainable transport across Africa.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_4">FAQs</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_5">Contact</a>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-
-                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="topics-listing.html">Topics Listing</a></li>
-
-                                    <li><a class="dropdown-item active" href="News_letter.html">Contact Form</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <div class="d-none d-lg-block">
-                            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+        <!-- Featured Article -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="featured-news mb-5">
+                    <img src="images/ev_faqs.jpg" alt="Featured Article">
+                    <div class="featured-overlay">
+                        <span class="news-category category-news mb-3 d-inline-block">Featured</span>
+                        <h2>Ghana Announces Major EV Infrastructure Investment for 2025</h2>
+                        <p class="mb-4" style="opacity: 0.9;">The government has unveiled plans to install over 200 new charging stations across major cities, marking a significant step toward sustainable transportation.</p>
+                        <div class="d-flex align-items-center gap-4">
+                            <span><i class="bi-calendar3 me-2"></i>December 15, 2024</span>
+                            <span><i class="bi-clock me-2"></i>5 min read</span>
+                            <a href="#" class="btn custom-btn">Read Full Story</a>
                         </div>
                     </div>
                 </div>
-            </nav>
 
-
-            <header class="site-header d-flex flex-column justify-content-center align-items-center">
-                <div class="container">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-5 col-12">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
-
-                                    <li class="breadcrumb-item active" aria-current="page">Contact Form</li>
-                                </ol>
-                            </nav>
-
-                            <h2 class="text-white">Contact Form</h2>
-                        </div>
-
-                    </div>
+                <!-- Category Filter -->
+                <div class="category-filter justify-content-center">
+                    <a href="#" class="category-filter-btn active">All Posts</a>
+                    <a href="#" class="category-filter-btn">Industry News</a>
+                    <a href="#" class="category-filter-btn">Technology</a>
+                    <a href="#" class="category-filter-btn">Policy & Regulation</a>
+                    <a href="#" class="category-filter-btn">Guides & Tips</a>
                 </div>
-            </header>
 
-
-            <section class="section-padding section-bg">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-12 col-12">
-                            <h3 class="mb-4 pb-2">We'd love to hear from you</h3>
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <form action="#" method="post" class="custom-form contact-form" role="form">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="form-floating">
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
-                                            
-                                            <label for="floatingInput">Name</label>
-                                        </div>
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-lg-8 col-12">
+                        <div class="row">
+                            <!-- Article 1 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="news-card">
+                                    <div class="news-card-img">
+                                        <img src="images/mission.jpg" alt="EV Article">
+                                        <span class="news-category category-tech">Technology</span>
                                     </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12"> 
-                                        <div class="form-floating">
-                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
-                                            
-                                            <label for="floatingInput">Email address</label>
+                                    <div class="news-card-body">
+                                        <div class="news-meta">
+                                            <span><i class="bi-calendar3 me-1"></i>Dec 12, 2024</span>
+                                            <span><i class="bi-clock me-1"></i>4 min</span>
                                         </div>
+                                        <h5 class="news-card-title">
+                                            <a href="#">New Fast-Charging Technology Reduces Wait Times by 50%</a>
+                                        </h5>
+                                        <p class="text-muted">Revolutionary charging technology is making EV adoption more convenient than ever, with some stations now offering 80% charge in just 15 minutes.</p>
+                                        <a href="#" class="read-more">
+                                            Read More <i class="bi-arrow-right"></i>
+                                        </a>
                                     </div>
-
-                                    <div class="col-lg-12 col-12">
-                                        <div class="form-floating">
-                                            <input type="text" name="subject" id="name" class="form-control" placeholder="Name" required="">
-                                            
-                                            <label for="floatingInput">Subject</label>
-                                        </div>
-
-                                        <div class="form-floating">
-                                            <textarea class="form-control" id="message" name="message" placeholder="Tell me about the project"></textarea>
-                                            
-                                            <label for="floatingTextarea">Tell me about the project</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-12 ms-auto">
-                                        <button type="submit" class="form-control">Submit</button>
-                                    </div>
-
                                 </div>
+                            </div>
+
+                            <!-- Article 2 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="news-card">
+                                    <div class="news-card-img">
+                                        <img src="images/vission.png" alt="EV Article">
+                                        <span class="news-category category-policy">Policy</span>
+                                    </div>
+                                    <div class="news-card-body">
+                                        <div class="news-meta">
+                                            <span><i class="bi-calendar3 me-1"></i>Dec 10, 2024</span>
+                                            <span><i class="bi-clock me-1"></i>6 min</span>
+                                        </div>
+                                        <h5 class="news-card-title">
+                                            <a href="#">Tax Incentives for EV Owners: What You Need to Know</a>
+                                        </h5>
+                                        <p class="text-muted">New government policies are making electric vehicles more affordable. Learn about the latest tax breaks and incentives available to EV buyers.</p>
+                                        <a href="#" class="read-more">
+                                            Read More <i class="bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Article 3 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="news-card">
+                                    <div class="news-card-img">
+                                        <img src="images/Vget buus.png" alt="EV Article">
+                                        <span class="news-category category-news">News</span>
+                                    </div>
+                                    <div class="news-card-body">
+                                        <div class="news-meta">
+                                            <span><i class="bi-calendar3 me-1"></i>Dec 8, 2024</span>
+                                            <span><i class="bi-clock me-1"></i>3 min</span>
+                                        </div>
+                                        <h5 class="news-card-title">
+                                            <a href="#">VeriTransGH Expands to Kumasi with 15 New Stations</a>
+                                        </h5>
+                                        <p class="text-muted">Our expansion continues as we bring verified EV charging infrastructure to Ghana's second-largest city.</p>
+                                        <a href="#" class="read-more">
+                                            Read More <i class="bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Article 4 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="news-card">
+                                    <div class="news-card-img">
+                                        <img src="images/Phone.png" alt="EV Article">
+                                        <span class="news-category category-guide">Guide</span>
+                                    </div>
+                                    <div class="news-card-body">
+                                        <div class="news-meta">
+                                            <span><i class="bi-calendar3 me-1"></i>Dec 5, 2024</span>
+                                            <span><i class="bi-clock me-1"></i>8 min</span>
+                                        </div>
+                                        <h5 class="news-card-title">
+                                            <a href="#">Complete Guide: Choosing Your First Electric Vehicle</a>
+                                        </h5>
+                                        <p class="text-muted">Everything you need to know before buying your first EV - from range considerations to charging options and total cost of ownership.</p>
+                                        <a href="#" class="read-more">
+                                            Read More <i class="bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Article 5 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="news-card">
+                                    <div class="news-card-img">
+                                        <img src="images/ev_faqs.jpg" alt="EV Article">
+                                        <span class="news-category category-tech">Technology</span>
+                                    </div>
+                                    <div class="news-card-body">
+                                        <div class="news-meta">
+                                            <span><i class="bi-calendar3 me-1"></i>Dec 2, 2024</span>
+                                            <span><i class="bi-clock me-1"></i>5 min</span>
+                                        </div>
+                                        <h5 class="news-card-title">
+                                            <a href="#">Solar-Powered Charging Stations: The Future is Here</a>
+                                        </h5>
+                                        <p class="text-muted">How renewable energy integration is making EV charging even more sustainable and cost-effective across Africa.</p>
+                                        <a href="#" class="read-more">
+                                            Read More <i class="bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Article 6 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="news-card">
+                                    <div class="news-card-img">
+                                        <img src="images/mission.jpg" alt="EV Article">
+                                        <span class="news-category category-news">News</span>
+                                    </div>
+                                    <div class="news-card-body">
+                                        <div class="news-meta">
+                                            <span><i class="bi-calendar3 me-1"></i>Nov 28, 2024</span>
+                                            <span><i class="bi-clock me-1"></i>4 min</span>
+                                        </div>
+                                        <h5 class="news-card-title">
+                                            <a href="#">Electric Buses Launch on Accra-Tema Route</a>
+                                        </h5>
+                                        <p class="text-muted">Public transportation goes green as the first electric bus service launches between Ghana's two major urban centers.</p>
+                                        <a href="#" class="read-more">
+                                            Read More <i class="bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav aria-label="News pagination" class="mt-4">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <i class="bi-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <i class="bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4 col-12 mt-5 mt-lg-0">
+                        <!-- Newsletter Widget -->
+                        <div class="sidebar-widget" style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white;">
+                            <h5 class="mb-3">Subscribe to Newsletter</h5>
+                            <p class="mb-4" style="opacity: 0.9;">Get the latest EV news and updates delivered to your inbox weekly.</p>
+                            <form>
+                                <input type="email" class="form-control mb-3" placeholder="Your email address" style="background: white; border: none; padding: 14px;">
+                                <button type="submit" class="btn w-100" style="background: var(--secondary-color); color: white; padding: 12px;">Subscribe</button>
                             </form>
                         </div>
 
-                        <div class="col-lg-5 col-12 mx-auto mt-5 mt-lg-0">
-                            <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.065641062665!2d-122.4230416990949!3d37.80335401520422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858127459fabad%3A0x808ba520e5e9edb7!2sFrancisco%20Park!5e1!3m2!1sen!2sth!4v1684340239744!5m2!1sen!2sth" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- Popular Posts -->
+                        <div class="sidebar-widget">
+                            <h6 class="sidebar-title">Popular Posts</h6>
+                            
+                            <div class="popular-post">
+                                <div class="popular-post-img">
+                                    <img src="images/mission.jpg" alt="Popular Post">
+                                </div>
+                                <div>
+                                    <h6 class="popular-post-title">
+                                        <a href="#">How to Maximize Your EV Battery Life</a>
+                                    </h6>
+                                    <small class="text-muted">Dec 1, 2024</small>
+                                </div>
+                            </div>
 
-                            <h5 class="mt-4 mb-2">Topic Listing Center</h5>
+                            <div class="popular-post">
+                                <div class="popular-post-img">
+                                    <img src="images/vission.png" alt="Popular Post">
+                                </div>
+                                <div>
+                                    <h6 class="popular-post-title">
+                                        <a href="#">Top 5 EVs Available in Ghana</a>
+                                    </h6>
+                                    <small class="text-muted">Nov 25, 2024</small>
+                                </div>
+                            </div>
 
-                            <p>Bay St &amp;, Larkin St, San Francisco, CA 94109, United States</p>
+                            <div class="popular-post">
+                                <div class="popular-post-img">
+                                    <img src="images/ev_faqs.jpg" alt="Popular Post">
+                                </div>
+                                <div>
+                                    <h6 class="popular-post-title">
+                                        <a href="#">EV Maintenance: What's Different?</a>
+                                    </h6>
+                                    <small class="text-muted">Nov 20, 2024</small>
+                                </div>
+                            </div>
                         </div>
 
-                    </div>
-                </div>
-            </section>
-        </main>
+                        <!-- Tags -->
+                        <div class="sidebar-widget">
+                            <h6 class="sidebar-title">Popular Tags</h6>
+                            <div class="tag-cloud">
+                                <a href="#" class="tag">Electric Vehicles</a>
+                                <a href="#" class="tag">Charging</a>
+                                <a href="#" class="tag">Ghana</a>
+                                <a href="#" class="tag">Sustainability</a>
+                                <a href="#" class="tag">Technology</a>
+                                <a href="#" class="tag">Infrastructure</a>
+                                <a href="#" class="tag">Policy</a>
+                                <a href="#" class="tag">Battery</a>
+                            </div>
+                        </div>
 
-        <footer class="site-footer section-padding">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="index.html">
-                            <i class="bi-back"></i>
-                            <span>Topic</span>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <h6 class="site-footer-title mb-3">Resources</h6>
-
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Home</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">How it works</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">FAQs</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                        <h6 class="site-footer-title mb-3">Information</h6>
-
-                        <p class="text-white d-flex mb-1">
-                            <a href="tel: 305-240-9671" class="site-footer-link">
-                                305-240-9671
-                            </a>
-                        </p>
-
-                        <p class="text-white d-flex">
-                            <a href="mailto:info@company.com" class="site-footer-link">
-                                info@company.com
-                            </a>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            English</button>
-
-                            <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button">Thai</button></li>
-
-                                <li><button class="dropdown-item" type="button">Myanmar</button></li>
-
-                                <li><button class="dropdown-item" type="button">Arabic</button></li>
+                        <!-- Quick Links -->
+                        <div class="sidebar-widget">
+                            <h6 class="sidebar-title">Quick Links</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">
+                                    <a href="topics-listing.html" class="text-muted text-decoration-none">
+                                        <i class="bi-chevron-right me-2 text-success"></i>Find Charging Stations
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="index.html#section_3" class="text-muted text-decoration-none">
+                                        <i class="bi-chevron-right me-2 text-success"></i>How VeriTransGH Works
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="about.html" class="text-muted text-decoration-none">
+                                        <i class="bi-chevron-right me-2 text-success"></i>About Our Platform
+                                    </a>
+                                </li>
+                                <li class="mb-0">
+                                    <a href="index.html#section_5" class="text-muted text-decoration-none">
+                                        <i class="bi-chevron-right me-2 text-success"></i>Contact Us
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-
-                        <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
-                        <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-                        
                     </div>
-
                 </div>
             </div>
-        </footer>
+        </section>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/custom.js"></script>
+        <!-- Newsletter CTA -->
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="newsletter-box">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                            <h3 class="mb-3">Stay Updated on EV Developments</h3>
+                            <p class="mb-0" style="opacity: 0.9;">Join thousands of subscribers getting weekly insights on electric vehicles, charging infrastructure, and sustainable transport in Africa.</p>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <form class="d-flex gap-3 flex-column flex-md-row">
+                                <input type="email" placeholder="Enter your email address" class="flex-grow-1">
+                                <button type="submit">Subscribe Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    </body>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <a class="navbar-brand mb-3 d-block" href="index.html">
+                        <i class="bi-ev-station"></i>
+                        <span>VeriTransGH</span>
+                    </a>
+                    <p class="mb-4">Powering Africa's transition to sustainable electric transportation with verified charging infrastructure.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="site-footer-title">Platform</h6>
+                    <ul class="site-footer-links">
+                        <li><a href="topics-listing.html">Charging Stations</a></li>
+                        <li><a href="News_letter.html">EV News</a></li>
+                        <li><a href="index.html#section_3">How it Works</a></li>
+                        <li><a href="#">Driver App</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="site-footer-title">Company</h6>
+                    <ul class="site-footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mission.html">Our Mission</a></li>
+                        <li><a href="vision.html">Our Vision</a></li>
+                        <li><a href="index.html#section_5">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 mt-lg-0">
+                    <h6 class="site-footer-title">Contact Info</h6>
+                    <p class="mb-2">
+                        <i class="bi-geo-alt me-2"></i>
+                        Accra, Ghana
+                    </p>
+                    <p class="mb-2">
+                        <i class="bi-envelope me-2"></i>
+                        <a href="mailto:info@veritransgh.com">info@veritransgh.com</a>
+                    </p>
+                    <p class="mb-0">
+                        <i class="bi-telephone me-2"></i>
+                        <a href="tel:+233000000000">+233 00 000 0000</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4 border-top border-secondary">
+                <div class="col-lg-6 col-12">
+                    <p class="copyright-text mb-0">Copyright 2024 VeriTransGH. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 col-12 text-lg-end">
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        // Category filter functionality
+        document.querySelectorAll('.category-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.category-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
 </html>
