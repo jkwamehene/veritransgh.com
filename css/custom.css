@@ -1,0 +1,168 @@
+/* --- Professional Nav Bar Styling for Alignment and Spacing (custom.css) --- */
+
+/* 1. Ensure consistent link padding/size for all navigation items */
+.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+    /* Horizontal padding is important for visual spacing */
+    padding-left: 15px !important; 
+    padding-right: 15px !important; 
+    /* Vertical padding ensures a consistent height and click area */
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    /* Optional: Ensure font size is standard and readable */
+    font-size: 16px;
+    font-weight: 600; /* Makes text look professional and prominent */
+}
+
+/* 2. Adjust spacing between items (if necessary, though padding usually handles this) */
+.navbar-expand-lg .navbar-nav .nav-item {
+    margin-right: 0px; /* Remove any existing large margin */
+}
+
+/* 3. Dropdown Consistency */
+.navbar-expand-lg .navbar-nav .nav-item.dropdown .nav-link {
+    /* Add extra space for the dropdown arrow, keeping text aligned */
+    padding-right: 25px !important; 
+}
+
+/* 4. Brand Logo Alignment (to ensure the logo text/icon is centered vertically) */
+.navbar-brand {
+    display: flex; /* Enables flexbox for centering children */
+    align-items: center; /* Vertically center the icon and text */
+    padding-top: 0.5rem; /* Adjust padding to match surrounding items */
+    padding-bottom: 0.5rem;
+}
+.navbar-brand i {
+    font-size: 24px; /* Ensure icon is large enough */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+
+/* --- Professional App Download Styling --- */
+
+/* Ensures the badges stay centered and professional */
+.app-download-cta .download-link {
+    display: inline-block;
+    vertical-align: middle;
+    /* Optional: Add a slight hover effect */
+    transition: transform 0.2s;
+}
+
+.app-download-cta .download-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Ensure images don't get oversized */
+.app-download-cta img {
+    max-width: 150px; /* Max width for a clean look */
+    height: 45px !important; /* Consistent height is key */
+}
+
+/* Contact Section Refinement */
+#contact .form-control, 
+#contact .form-select {
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+#contact .form-control:focus {
+    background-color: #fff !important;
+    box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.1);
+    border: 1px solid var(--vt-green) !important;
+}
+
+/* Ensure the map fills the column on mobile if you decide to show it */
+@media (max-width: 991px) {
+    iframe {
+        height: 300px !important;
+    }
+}
+
+.phone-mockup img {
+    border: 8px solid #333; /* Simulated phone bezel */
+    border-radius: 30px;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.video-container video {
+    object-fit: cover;
+    width: 100%;
+}
+
+
+
+
+/* Navbar Polish */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important; /* Blue brand color */
+}
+
+/* THE HOVER DROPDOWN LOGIC */
+@media (min-width: 992px) {
+    .hover-dropdown:hover > .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu {
+        display: block; /* Overriding default to control with opacity */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        margin-top: 0;
+    }
+}
+
+/* Dropdown Item Modern Look */
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    padding-left: 1.5rem; /* Slide in effect */
+    transition: all 0.2s ease;
+}
+
+/* Site Footer */
+/* Clean Corporate Footer */
+./* Full-width professional block */
+.footer-full-width {
+    background-color: #111111 !important; /* Solid dark background */
+    width: 100%;
+    border-top: 1px solid #333; /* Simple professional thin line */
+}
+
+/* Links: No movement, no decoration */
+.footer-link-plain {
+    color: #adb5bd !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.footer-link-plain:hover {
+    color: #198754 !important; /* Changes only color to green on hover */
+}
+
+/* Text visibility */
+.text-secondary {
+    color: #adb5bd !important;
+}
+
+.text-success {
+    color: #198754 !important;
+}
+
+/* Standardize padding */
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
