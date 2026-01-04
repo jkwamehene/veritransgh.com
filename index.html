@@ -1,485 +1,666 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Verified Global E-Transport. Powering sustainable mobility across Africa with electric vehicle infrastructure and smart transportation solutions.">
-        <meta name="author" content="Verified Global E-Transport">
-        <title>Verified Global E-Transport</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verified Global E-Transport - Ghana's premier electric vehicle transportation network. Book verified, sustainable rides across Ghana.">
+    <title>VeriTransGH - Powering Africa's Electric Future</title>
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-        
-        <!-- CSS Files -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-        <link href="css/verified.css" rel="stylesheet">
-    </head>
-    
-    <body id="top">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <main>
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg fixed-top">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">
-                        <i class="bi-lightning-charge-fill"></i>
-                        <span>Verified Global E-Transport</span>
-                    </a>
-    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="index.html">Home</a>
-                            </li>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html">About Us</a>
-                            </li>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="purposeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Purpose</a>
-                                <ul class="dropdown-menu" aria-labelledby="purposeDropdown">
-                                    <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
-                                    <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="evHubDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EV Hub</a>
-                                <ul class="dropdown-menu" aria-labelledby="evHubDropdown">
-                                    <li><a class="dropdown-item" href="topics-listing.html">Charging Stations</a></li>
-                                    <li><a class="dropdown-item" href="News_letter.html">EV News</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="index.html#section_3">How it Works</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html#section_4">FAQs</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html#section_5">Contact</a>
-                            </li>
-                        </ul>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-charging-station"></i>
                     </div>
-                </div>
-            </nav>
-            
+                    <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                </a>
 
-            <!-- Hero Section -->
-            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 col-12 mx-auto text-center">
-                            <span class="section-badge">Sustainable Transport Solutions</span>
-                            <h1 class="text-white">Powering Africa's Electric Future</h1>
-                            <p>Verified Global E-Transport connects passengers, drivers, and operators through verified, sustainable transportation infrastructure across Ghana and beyond.</p>
-                            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                                <a href="#section_3" class="btn btn-primary">Get Started</a>
-                                <a href="about.html" class="btn btn-outline-light">Learn More</a>
-                            </div>
-                        </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#book" class="btn-primary">Book Now</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <div class="hero-badge">
+                        <i class="fas fa-leaf"></i>
+                        <span>100% Electric & Sustainable</span>
                     </div>
-                </div>
-            </section>
+                    <h1 class="hero-title">
+                        Powering Africa's <span class="gradient-text">Electric Future</span>
+                    </h1>
+                    <p class="hero-description">
+                        Ghana's first verified electric vehicle transport network. Safe, sustainable, and seamless travel connecting passengers with eco-friendly rides across the nation.
+                    </p>
 
-
-            <!-- Featured Section - App Showcase -->
-            <section class="featured-section section-padding" id="section_2">
-                <div class="container">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-5 col-12 mb-5 mb-lg-0">
-                            <div class="custom-block bg-white shadow-lg text-center p-4">
-                                <h5 class="mb-3">Our Mobile App</h5>
-                                
-                                <div class="phone-mockup mb-4">
-                                    <img src="images/Phone.png" class="img-fluid rounded-4 shadow-sm" alt="EV Station App Screen">
+                    <!-- Inline Booking Widget -->
+                    <div class="quick-book" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Book Your Ride Now</h3>
+                        <form class="booking-form" id="quickBookForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <select required>
+                                        <option value="">From</option>
+                                        <option value="accra">Accra</option>
+                                        <option value="kumasi">Kumasi</option>
+                                        <option value="takoradi">Takoradi</option>
+                                        <option value="cape-coast">Cape Coast</option>
+                                        <option value="tamale">Tamale</option>
+                                    </select>
                                 </div>
-
-                                <p class="text-muted small mb-4">Find and manage your charging sessions on the go with real-time station availability.</p>
-
-                                <a href="https://play.google.com/store" target="_blank" class="d-inline-block">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 50px;">
-                                </a>
+                                <div class="form-group">
+                                    <i class="fas fa-location-dot"></i>
+                                    <select required>
+                                        <option value="">To</option>
+                                        <option value="accra">Accra</option>
+                                        <option value="kumasi">Kumasi</option>
+                                        <option value="takoradi">Takoradi</option>
+                                        <option value="cape-coast">Cape Coast</option>
+                                        <option value="tamale">Tamale</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="date" required>
+                                </div>
+                                <button type="submit" class="btn-submit">
+                                    <span>Search Rides</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
                             </div>
-                        </div>
+                        </form>
 
-                        <div class="col-lg-7 col-12">
-                            <div class="custom-block-overlay">
-                                <div class="d-flex flex-column h-100">
-                                    
-                                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
-                                        <img src="images/ev_faqs.jpg" class="w-100 h-100" style="object-fit: cover;" alt="EV Station Demo">
-                                    </div>
-
-                                    <div class="custom-block-overlay-text mt-4">
-                                        <h5 class="text-white">Experience Our EV Stations</h5>
-                                        <p class="text-white mb-0">Watch how we are powering the future of sustainable transport with our easy-to-use EV stations across Ghana.</p>
-                                    </div>
+                        <div class="live-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-bus"></i>
+                                <div>
+                                    <strong>24</strong>
+                                    <span>Active Buses</span>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- About Preview Section -->
-            <section class="section-padding">
-                <div class="container">
-                    <div class="section-header">
-                        <span class="section-badge">About VGET</span>
-                        <h2>Bus Transportation System Apps</h2>
-                        <p>VGET is more than a website. It is a scalable digital platform built to support individuals, businesses, governments, and transport operators.</p>
-                    </div>
-
-                    <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="custom-block">
-                                <a href="about.html">
-                                    <div class="custom-block-icon">
-                                        <i class="bi-gear-fill"></i>
-                                    </div>
-                                    <h5>What We Do</h5>
-                                    <p class="mb-3">VGET is a scalable digital platform built to support individuals, businesses, governments, and transport operators in building smarter mobility solutions.</p>
-                                    <img src="images/mission.jpg" class="custom-block-image img-fluid" alt="What We Do">
-                                </a>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>156</strong>
+                                    <span>Available Seats</span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="custom-block">
-                                <a href="mission.html">
-                                    <div class="custom-block-icon">
-                                        <i class="bi-bullseye"></i>
-                                    </div>
-                                    <h5>Our Mission</h5>
-                                    <p class="mb-3">To enable smarter mobility decisions and accelerate the adoption of clean transport across Africa through reliable data and digital innovation.</p>
-                                    <img src="images/ev_faqs.jpg" class="custom-block-image img-fluid" alt="Our Mission">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="custom-block">
-                                <a href="vision.html">
-                                    <div class="custom-block-icon">
-                                        <i class="bi-eye-fill"></i>
-                                    </div>
-                                    <h5>Our Vision</h5>
-                                    <p class="mb-3">We envision African cities and transport systems that are efficient, connected, environmentally sustainable, and ready for electric mobility.</p>
-                                    <img src="images/Vget buus.png" class="custom-block-image img-fluid" alt="Our Vision">
-                                </a>
+                            <div class="stat-item">
+                                <i class="fas fa-leaf"></i>
+                                <div>
+                                    <strong>2.4T</strong>
+                                    <span>CO₂ Saved</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
 
-
-            <!-- How It Works Section - Redesigned -->
-            <section class="section-padding" id="section_3" style="background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 100%);">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-center mb-5">
-                            <span class="section-badge" style="background: rgba(25, 135, 84, 0.3); color: #198754; border: 1px solid rgba(25, 135, 84, 0.5);">Process</span>
-                            <h2 class="text-white mb-3">How Does It Work?</h2>
-                            <p style="color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto;">Our streamlined process connects passengers with reliable transport services in three simple steps.</p>
-                        </div>
-
-                        <div class="col-lg-10 col-12 mx-auto">
-                            <div class="row g-4">
-                                <!-- Step 1 -->
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="text-center p-4" style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); height: 100%;">
-                                        <div class="mb-4" style="width: 80px; height: 80px; background: linear-gradient(135deg, #198754, #146c43); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(25, 135, 84, 0.3);">
-                                            <i class="bi-search text-white" style="font-size: 2rem;"></i>
-                                        </div>
-                                        <div style="color: #198754; font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">STEP 1</div>
-                                        <h4 class="text-white mb-3">Passenger Books</h4>
-                                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 0;">Customer uses the Passenger App to book a ticket and select their preferred pickup point. Real-time availability and pricing are displayed for transparency.</p>
+                <div class="hero-visual" data-aos="fade-left">
+                    <div class="phone-mockup">
+                        <div class="mockup-screen">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=800&fit=crop" alt="VeriTransGH App Interface">
+                            <div class="mockup-overlay">
+                                <div class="tracking-card">
+                                    <div class="tracking-header">
+                                        <i class="fas fa-bus"></i>
+                                        <span>Bus arriving in 5 min</span>
                                     </div>
-                                </div>
-
-                                <!-- Step 2 -->
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="text-center p-4" style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); height: 100%;">
-                                        <div class="mb-4" style="width: 80px; height: 80px; background: linear-gradient(135deg, #198754, #146c43); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(25, 135, 84, 0.3);">
-                                            <i class="bi-geo-alt text-white" style="font-size: 2rem;"></i>
-                                        </div>
-                                        <div style="color: #198754; font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">STEP 2</div>
-                                        <h4 class="text-white mb-3">Station Manages</h4>
-                                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 0;">The Bus Driver App shows booking details and provides navigation to pickup locations. Drivers receive real-time updates and passenger information.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Step 3 -->
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="text-center p-4" style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); height: 100%;">
-                                        <div class="mb-4" style="width: 80px; height: 80px; background: linear-gradient(135deg, #198754, #146c43); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(25, 135, 84, 0.3);">
-                                            <i class="bi-check-circle text-white" style="font-size: 2rem;"></i>
-                                        </div>
-                                        <div style="color: #198754; font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">STEP 3</div>
-                                        <h4 class="text-white mb-3">Travel with Confidence</h4>
-                                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 0;">The DOP App handles check-ins, route planning, and station operations. Passengers enjoy a seamless, verified travel experience from start to finish.</p>
+                                    <div class="tracking-progress">
+                                        <div class="progress-bar"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-12 text-center mt-5">
-                            <p class="text-white mb-4">Ready to get started? Download the Verified Global E-Transport App today!</p>
-                            <a href="#" target="_blank">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 50px;">
-                            </a>
+                    <div class="floating-card card-1" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-shield-check"></i>
+                        <div>
+                            <strong>100% Verified</strong>
+                            <span>Drivers & Vehicles</span>
                         </div>
                     </div>
-                </div>
-            </section>
 
-
-            <!-- FAQ Section -->
-            <section class="faq-section section-padding" id="section_4">
-                <div class="container">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                            <span class="section-badge">Support</span>
-                            <h2 class="mb-4">Frequently Asked Questions</h2>
-                            <p class="mb-4">Have questions about Verified Global E-Transport? Find answers to our most commonly asked questions below.</p>
-                            <img src="images/ev_faqs.jpg" class="img-fluid rounded-4" alt="FAQs">
+                    <div class="floating-card card-2" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <strong>Zero Emissions</strong>
+                            <span>All Electric Fleet</span>
                         </div>
-
-                        <div class="col-lg-6 col-12">
-                            <div class="accordion" id="accordionFAQ">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            What is Verified Global E-Transport?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
-                                        <div class="accordion-body">
-                                            Verified Global E-Transport is a verified global e-transport platform designed to power sustainable mobility across Africa. We connect passengers, drivers, and transport operators through our digital infrastructure.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            How do I book a trip?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
-                                        <div class="accordion-body">
-                                            Download the Verified Global E-Transport Passenger App from the Google Play Store, create an account, select your destination, choose a pickup point, and confirm your booking.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Where are your EV charging stations located?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
-                                        <div class="accordion-body">
-                                            Our EV charging stations are strategically located across major cities in Ghana, starting with Accra. Visit the EV Hub section to find the nearest station.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            Is Verified Global E-Transport available outside Ghana?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
-                                        <div class="accordion-body">
-                                            Currently, Verified Global E-Transport operates primarily in Ghana. However, our vision includes expanding across Africa. Stay tuned for updates!
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Contact Section -->
-            <section class="contact-section py-5 bg-light" id="section_5">
-                <div class="container">
-                    <div class="section-header">
-                        <span class="section-badge">Contact</span>
-                        <h2>Get In Touch</h2>
-                        <p>We are building Ghana's greenest transport network together. Reach out to us for partnerships, support, or inquiries.</p>
-                    </div>
-
-                    <div class="row g-0 overflow-hidden rounded-4 shadow-lg border-0">
-                        
-                        <div class="col-lg-6 d-none d-lg-block">
-                            <div class="map-container h-100">
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127066.25345142133!2d-0.2335133!3d5.5912086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9084b2b7a773%3A0xbed14ed8650e2dd3!2sAccra%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1690000000000!5m2!1sen!2sgh" 
-                                    width="100%" 
-                                    height="100%" 
-                                    style="border:0; min-height: 550px;" 
-                                    allowfullscreen="" 
-                                    loading="lazy">
-                                </iframe>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 p-4 p-md-5 bg-white d-flex flex-column justify-content-center">
-                            <div class="contact-form-wrapper">
-                                <h3 class="fw-bold text-success mb-3">Send us a Message</h3>
-                                <p class="text-muted small mb-4">Need help? Fill out the form below and we will get back to you within 24 hours.</p>
-                                
-                                <form id="contactForm" class="row g-3">
-                                    <div class="col-md-6">
-                                        <label class="form-label small fw-bold text-dark">Full Name</label>
-                                        <input type="text" class="form-control custom-input" placeholder="e.g. Kwame Mensah" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label small fw-bold text-dark">Email Address</label>
-                                        <input type="email" class="form-control custom-input" placeholder="kwame@example.com" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label small fw-bold text-dark">Regarding</label>
-                                        <select class="form-select custom-input">
-                                            <option selected>General Support</option>
-                                            <option>EV Station Partnership</option>
-                                            <option>Technical Issue</option>
-                                            <option>Billing and Payments</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label small fw-bold text-dark">Your Message</label>
-                                        <textarea class="form-control custom-input" rows="4" placeholder="How can our team help you?" required></textarea>
-                                    </div>
-                                    <div class="col-12 mt-4">
-                                        <button type="submit" class="btn btn-success btn-lg w-100 rounded-pill shadow-sm fw-bold">
-                                            Send Message <i class="bi bi-send ms-2"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-
-        <!-- Footer -->
-        <footer class="footer-full-width">
-            <div class="container py-5">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                        <a class="navbar-brand d-flex align-items-center mb-3 text-white" href="index.html">
-                            <i class="bi-lightning-charge-fill text-success me-2"></i>
-                            <span class="fw-bold fs-4">Verified Global E-Transport</span>
-                        </a>
-                        <p class="text-secondary small">
-                            Verified infrastructure for electric vehicle mobility. Connecting drivers to reliable EV stations across Ghana.
-                        </p>
-                        <ul class="social-icon mt-4">
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link"><i class="bi-facebook"></i></a>
-                            </li>
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link"><i class="bi-twitter"></i></a>
-                            </li>
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link"><i class="bi-instagram"></i></a>
-                            </li>
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link"><i class="bi-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                        <h6 class="text-white fw-bold text-uppercase mb-3 small">Platform</h6>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="index.html" class="footer-link-plain">Home</a></li>
-                            <li class="mb-2"><a href="about.html" class="footer-link-plain">About Us</a></li>
-                            <li class="mb-2"><a href="mission.html" class="footer-link-plain">Our Mission</a></li>
-                            <li class="mb-2"><a href="vision.html" class="footer-link-plain">Our Vision</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                        <h6 class="text-white fw-bold text-uppercase mb-3 small">Resources</h6>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="topics-listing.html" class="footer-link-plain">EV Stations</a></li>
-                            <li class="mb-2"><a href="News_letter.html" class="footer-link-plain">EV News</a></li>
-                            <li class="mb-2"><a href="index.html#section_4" class="footer-link-plain">FAQs</a></li>
-                            <li class="mb-2"><a href="index.html#section_5" class="footer-link-plain">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <h6 class="text-white fw-bold text-uppercase mb-3 small">Contact Information</h6>
-                        <ul class="list-unstyled text-secondary small">
-                            <li class="mb-3">
-                                <i class="bi-geo-alt text-success me-2"></i> Accra, Ghana
-                            </li>
-                            <li class="mb-3">
-                                <a href="tel:+233240000000" class="footer-link-plain">
-                                    <i class="bi-telephone text-success me-2"></i> +233 (0) 24 000 0000
-                                </a>
-                            </li>
-                            <li class="mb-3">
-                                <a href="mailto:info@verifiedeglogal.com" class="footer-link-plain">
-                                    <i class="bi-envelope text-success me-2"></i> info@verifiedeglobal.com
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <hr class="border-secondary opacity-25 my-4">
-
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center text-md-start">
-                        <p class="text-secondary small mb-0">2025 Verified Global E-Transport. All rights reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-                        <a href="#" class="footer-link-plain me-3 small">Privacy Policy</a>
-                        <a href="#" class="footer-link-plain small">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
 
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
 
-        <!-- JavaScript Files -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/custom.js"></script>
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid" data-aos="fade-up">
+                <div class="trust-item">
+                    <div class="trust-number">50K+</div>
+                    <div class="trust-label">Happy Passengers</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">15</div>
+                    <div class="trust-label">Cities Connected</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">98%</div>
+                    <div class="trust-label">On-Time Rate</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">24/7</div>
+                    <div class="trust-label">Customer Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </body>
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Simple Process</span>
+                <h2>How It Works</h2>
+                <p>Get from A to B in three easy steps with our seamless booking platform</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                    <h3>Book Your Seat</h3>
+                    <p>Choose your route, select your seat, and pick your preferred pickup point. Real-time pricing and availability at your fingertips.</p>
+                    <div class="step-features">
+                        <span><i class="fas fa-check"></i> Instant booking</span>
+                        <span><i class="fas fa-check"></i> Real-time seats</span>
+                        <span><i class="fas fa-check"></i> Flexible payment</span>
+                    </div>
+                </div>
+
+                <div class="step-connector" data-aos="fade-right" data-aos-delay="200"></div>
+
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Track Your Ride</h3>
+                    <p>Get live updates as your driver approaches. Receive notifications with accurate ETAs and driver details for complete peace of mind.</p>
+                    <div class="step-features">
+                        <span><i class="fas fa-check"></i> Live GPS tracking</span>
+                        <span><i class="fas fa-check"></i> Driver info</span>
+                        <span><i class="fas fa-check"></i> SMS updates</span>
+                    </div>
+                </div>
+
+                <div class="step-connector" data-aos="fade-right" data-aos-delay="400"></div>
+
+                <div class="step-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fas fa-circle-check"></i>
+                    </div>
+                    <h3>Travel Comfortably</h3>
+                    <p>Enjoy a smooth, quiet, emission-free journey in our modern electric buses. Arrive refreshed at your destination, on time, every time.</p>
+                    <div class="step-features">
+                        <span><i class="fas fa-check"></i> AC comfort</span>
+                        <span><i class="fas fa-check"></i> WiFi onboard</span>
+                        <span><i class="fas fa-check"></i> USB charging</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-background"></div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Why Choose Us</span>
+                <h2>Built for Everyone</h2>
+                <p>A complete ecosystem connecting passengers, drivers, and operators</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="feature-icon passenger">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Passenger App</h3>
+                    <p>Book tickets instantly with transparent pricing, select your seat, and track your ride in real-time.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Easy ticket booking</li>
+                        <li><i class="fas fa-check-circle"></i> Seat selection</li>
+                        <li><i class="fas fa-check-circle"></i> Live tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Payment flexibility</li>
+                    </ul>
+                    <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="feature-icon driver">
+                        <i class="fas fa-steering-wheel"></i>
+                    </div>
+                    <h3>Driver App</h3>
+                    <p>Access booking details, navigation assistance, and passenger information all in one place.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Route optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Passenger manifest</li>
+                        <li><i class="fas fa-check-circle"></i> GPS navigation</li>
+                        <li><i class="fas fa-check-circle"></i> Earnings tracking</li>
+                    </ul>
+                    <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="feature-icon operator">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Operator Dashboard</h3>
+                    <p>Comprehensive station management with check-ins, route planning, and real-time analytics.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Fleet management</li>
+                        <li><i class="fas fa-check-circle"></i> Revenue analytics</li>
+                        <li><i class="fas fa-check-circle"></i> Staff coordination</li>
+                        <li><i class="fas fa-check-circle"></i> Route planning</li>
+                    </ul>
+                    <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="sustainability">
+        <div class="container">
+            <div class="sustainability-content">
+                <div class="sustainability-visual" data-aos="fade-right">
+                    <div class="eco-circle">
+                        <div class="eco-inner">
+                            <i class="fas fa-leaf"></i>
+                            <div class="eco-stats">
+                                <div class="eco-number">2,431</div>
+                                <div class="eco-label">Tons CO₂ Saved</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eco-badge badge-1">
+                        <i class="fas fa-charging-station"></i>
+                        <span>100% Electric</span>
+                    </div>
+                    <div class="eco-badge badge-2">
+                        <i class="fas fa-wind"></i>
+                        <span>Zero Emissions</span>
+                    </div>
+                    <div class="eco-badge badge-3">
+                        <i class="fas fa-solar-panel"></i>
+                        <span>Solar Powered</span>
+                    </div>
+                </div>
+
+                <div class="sustainability-text" data-aos="fade-left">
+                    <span class="section-badge">Green Transportation</span>
+                    <h2>Driving Change for a Sustainable Tomorrow</h2>
+                    <p>Every ride you take with VeriTransGH contributes to a cleaner, greener Ghana. Our 100% electric fleet eliminates harmful emissions while delivering comfortable, modern transportation.</p>
+
+                    <div class="impact-stats">
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div class="impact-info">
+                                <strong>12,500 Trees</strong>
+                                <span>Equivalent planted</span>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-gas-pump"></i>
+                            </div>
+                            <div class="impact-info">
+                                <strong>85,000L</strong>
+                                <span>Fuel saved</span>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="impact-info">
+                                <strong>98%</strong>
+                                <span>Emission reduction</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn-primary">Our Sustainability Mission <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">What People Say</span>
+                <h2>Trusted by Thousands</h2>
+                <p>Real stories from real passengers across Ghana</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The booking process is incredibly smooth and the buses are always on time. I love that I'm contributing to a cleaner environment with every trip!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/100?img=1" alt="Kwame Mensah">
+                        <div>
+                            <strong>Kwame Mensah</strong>
+                            <span>Business Consultant, Accra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"As a frequent traveler between Kumasi and Accra, VeriTransGH has become my go-to. The comfort and reliability are unmatched!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Ama Osei">
+                        <div>
+                            <strong>Ama Osei</strong>
+                            <span>Teacher, Kumasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The real-time tracking feature gives me peace of mind. I know exactly when my bus will arrive. Customer service is also exceptional!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/100?img=8" alt="Kofi Asante">
+                        <div>
+                            <strong>Kofi Asante</strong>
+                            <span>Student, Cape Coast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="book">
+        <div class="cta-background">
+            <div class="cta-shape cta-shape-1"></div>
+            <div class="cta-shape cta-shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Ready to Go Green?</h2>
+                <p>Join thousands of passengers choosing sustainable, reliable transportation across Ghana</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary btn-large">
+                        <i class="fas fa-ticket"></i>
+                        Book Your First Ride
+                    </a>
+                    <a href="#" class="btn-secondary btn-large">
+                        <i class="fas fa-download"></i>
+                        Download App
+                    </a>
+                </div>
+                <div class="app-badges">
+                    <a href="#" class="app-badge">
+                        <i class="fab fa-apple"></i>
+                        <div>
+                            <span>Download on</span>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="app-badge">
+                        <i class="fab fa-google-play"></i>
+                        <div>
+                            <span>Get it on</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2>Let's Connect</h2>
+                    <p>Have questions or need support? We're here to help you every step of the way.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <strong>Call Us</strong>
+                                <a href="tel:+233123456789">+233 123 456 789</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <strong>Email Us</strong>
+                                <a href="mailto:info@veritransgh.com">info@veritransgh.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <strong>Visit Us</strong>
+                                <span>Accra Central, Ghana</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="booking">Booking Inquiry</option>
+                                <option value="support">Customer Support</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                        <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                    </a>
+                    <p>Ghana's premier electric vehicle transportation network, connecting communities with sustainable, verified rides.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Passenger Booking</a></li>
+                        <li><a href="#">Driver Portal</a></li>
+                        <li><a href="#">Operator Dashboard</a></li>
+                        <li><a href="#">Corporate Travel</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety Guidelines</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 VeriTransGH - Verified Global E-Transport. All rights reserved.</p>
+                <p>Built with <i class="fas fa-heart"></i> for a sustainable future</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
