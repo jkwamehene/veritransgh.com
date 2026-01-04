@@ -272,3 +272,160 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* Cost Comparison Styles */
+.cost-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cost-card {
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    text-align: center;
+}
+
+.cost-card.fuel-cost {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border: 2px solid #ef4444;
+}
+
+.cost-card.ev-cost {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border: 2px solid #10b981;
+}
+
+.cost-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cost-card.fuel-cost i {
+    color: #ef4444;
+}
+
+.cost-card.ev-cost i {
+    color: #10b981;
+}
+
+.cost-label {
+    font-size: 0.9375rem;
+    color: var(--slate-600);
+    margin-bottom: 0.5rem;
+}
+
+.cost-amount {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--slate-900);
+}
+
+.savings-highlight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl);
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.savings-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.savings-info {
+    flex: 1;
+}
+
+.savings-label {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+}
+
+.savings-amount {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.savings-percentage {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.chart-container {
+    height: 350px;
+    margin-bottom: 2rem;
+    background: var(--slate-100);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+}
+
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.breakdown-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--slate-100);
+    border-radius: var(--radius-lg);
+}
+
+.breakdown-item i {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.breakdown-item strong {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--slate-900);
+}
+
+.breakdown-item span {
+    display: block;
+    color: var(--slate-600);
+    font-size: 0.9375rem;
+}
+
+@media (max-width: 768px) {
+    .cost-comparison,
+    .breakdown-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .savings-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+}
